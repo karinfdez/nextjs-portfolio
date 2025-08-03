@@ -39,7 +39,7 @@ export default function FlipImage({ src, backImages = [], autoSequence = [], siz
           // sequence done – ensure gallery backImage reset
           if (hasGallery) setBackImage(backImages[index]);
         }
-      }, 700); // duration of visible back side
+      }, 1500); // duration of visible back side
     };
 
     const initialDelay = 300;
