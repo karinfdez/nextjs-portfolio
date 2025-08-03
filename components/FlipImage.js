@@ -51,6 +51,7 @@ export default function FlipImage({ src, backImages = [], autoSequence = [], siz
     <div
       className={`flip-card inline-block group ring-4 ring-orange-500 ${className} ${sizeMd ? `md:w-[${sizeMd}px] md:h-[${sizeMd}px]` : ''}`}
       style={{ width: `${size}px`, height: `${size}px` }}
+      data-flipped={flipped ? 'true' : 'false'}
     >
       <div
         className={`flip-card-inner ${flipped ? 'flipped' : ''}`}
