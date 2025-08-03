@@ -4,6 +4,7 @@
 
 /* --- FlipImage styles --- */
 .flip-card {
+  position: relative;
   perspective: 1000px;
   border-radius: 9999px; /* fully rounded */
   overflow: hidden; /* keep content inside the oval */
