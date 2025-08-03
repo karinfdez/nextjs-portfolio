@@ -15,12 +15,12 @@ export default function Home() {
           src={karin}
           backImages={gallery}
           autoSequence={sequence}
-          width={200}
-          height={200}
+          size={200} sizeMd={225}
           alt="Profile photo"
+          shiftY="-8%" 
           className="mx-auto mb-6"
         />
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">John Doe</h1>
+        <h1 className="text-5xl md:text-6xl font-bold mb-4">Karin Fernandez</h1>
         <p className="text-xl md:text-2xl text-gray-400 mb-8">
           Software Engineer passionate about building exceptional digital
           experiences.

@@ -9,8 +9,10 @@ import { useState } from 'react';
  */
 import { useEffect } from 'react';
 
-export default function FlipImage({ src, backImages = [], autoSequence = [], width = 200, height = 200, alt = '', className = '', hoverText = null }) {
+export default function FlipImage({ src, backImages = [], autoSequence = [], size = 200, sizeMd = null, offsetY = '50%', shiftY = '0%', alt = '', className = '', hoverText = null }) {
   const [loaded, setLoaded] = useState(false);
+  const width = size;
+  const height = width;
   const [flipped, setFlipped] = useState(false);
   const [index, setIndex] = useState(0);
   const hasGallery = backImages && backImages.length > 0;
@@ -47,8 +49,8 @@ export default function FlipImage({ src, backImages = [], autoSequence = [], wid
 
   return (
     <div
-      className={`flip-card inline-block group ring-4 ring-orange-500 ${className}`}
-      style={{ width: `${width}px`, height: `${height}px` }}
+      className={`flip-card inline-block group ring-4 ring-orange-500 ${className} ${sizeMd ? `md:w-[${sizeMd}px] md:h-[${sizeMd}px]` : ''}`}
+      style={{ width: `${size}px`, height: `${size}px` }}
     >
       <div
         className={`flip-card-inner ${flipped ? 'flipped' : ''}`}
@@ -79,9 +81,10 @@ export default function FlipImage({ src, backImages = [], autoSequence = [], wid
             width={width}
             height={height}
             alt={alt}
-            className="rounded-full object-cover object-center"
+            className="rounded-full object-cover"
             onLoad={() => setLoaded(true)}
             priority
+            style={{ objectPosition: `50% ${offsetY}`, transform: `translateY(${shiftY})` }}
           />
         </div>
         <div
