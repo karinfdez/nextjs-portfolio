@@ -21,7 +21,7 @@ export default function Home() {
           shiftY="-8%" 
           className="flex-shrink-0"
         />
-                  <h1 className="text-5xl md:text-6xl font-bold mb-4 -ml-16 z-10"><span className="text-orange-500">K</span>arin Fernandez</h1>
+                  <h1 className="text-5xl md:text-6xl font-bold mb-4 -ml-16 z-10"><span className="k-highlight">K</span>arin Fernandez</h1>
         </div>
         <p className="text-xl md:text-2xl text-gray-400 mb-8">
           Software Engineer passionate about building exceptional digital

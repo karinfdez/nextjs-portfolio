@@ -49,6 +49,12 @@
 }
 /* --- End FlipImage styles --- */
 
+/* Highlighted initial */
+.k-highlight {
+  color: #ff7a1a;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.55);
+}
+
 html,
 body {
   height: 100%;
