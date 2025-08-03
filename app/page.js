@@ -1,5 +1,10 @@
 import FlipImage from "../components/FlipImage";
+import karin from "./images/flip-images/karin.png";
 import tulips from "./images/flip-images/tulips.png";
+
+// Add more images here as you drop them into flip-images folder
+const gallery = [tulips];
+const sequence = [tulips];
 import Link from "next/link";
 
 export default function Home() {
@@ -7,8 +12,9 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center min-h-screen text-center px-4">
       <div className="max-w-2xl mx-auto">
         <FlipImage
-          src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
-          backSrc={tulips}
+          src={karin}
+          backImages={gallery}
+          autoSequence={sequence}
           width={200}
           height={200}
           alt="Profile photo"

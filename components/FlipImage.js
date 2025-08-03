@@ -9,26 +9,69 @@ import { useState } from 'react';
  */
 import { useEffect } from 'react';
 
-export default function FlipImage({ src, backSrc = null, width = 200, height = 200, alt = '', className = '', hoverText = '🖱️' }) {
+export default function FlipImage({ src, backImages = [], autoSequence = [], width = 200, height = 200, alt = '', className = '', hoverText = null }) {
   const [loaded, setLoaded] = useState(false);
   const [flipped, setFlipped] = useState(false);
+  const [index, setIndex] = useState(0);
+  const hasGallery = backImages && backImages.length > 0;
+  const [backImage, setBackImage] = useState(hasGallery ? backImages[0] : null);
 
-  // After main image loads, auto-flip once
+  // After main image loads, run auto-sequence if provided
   useEffect(() => {
-    if (loaded) {
-      const t = setTimeout(() => setFlipped(true), 300);
-      return () => clearTimeout(t);
-    }
-  }, [loaded]);
+    if (!loaded || !autoSequence.length) return;
+
+    let step = 0;
+    const run = () => {
+      if (step >= autoSequence.length) return;
+      // show seq[step]
+      setBackImage(autoSequence[step]);
+      setFlipped(true);
+      // after show
+      setTimeout(() => {
+        setFlipped(false);
+        step += 1;
+        if (step < autoSequence.length) {
+          // wait before next flip
+          setTimeout(run, 400);
+        } else {
+          // sequence done – ensure gallery backImage reset
+          if (hasGallery) setBackImage(backImages[index]);
+        }
+      }, 700); // duration of visible back side
+    };
+
+    const initialDelay = 300;
+    const timer = setTimeout(run, initialDelay);
+    return () => clearTimeout(timer);
+  }, [loaded, autoSequence, hasGallery, index, backImages]);
 
   return (
     <div
-      className={`flip-card inline-block group ${className}`}
+      className={`flip-card inline-block group ring-4 ring-orange-500 ${className}`}
       style={{ width: `${width}px`, height: `${height}px` }}
     >
       <div
         className={`flip-card-inner ${flipped ? 'flipped' : ''}`}
-        onClick={() => setFlipped((f) => !f)}
+        onClick={() => {
+          if (!hasGallery) {
+            setFlipped((f) => !f);
+            return;
+          }
+
+          setFlipped((prev) => {
+            if (prev) {
+              // Was showing back; flip back to front (karin)
+              return false;
+            }
+            // Was showing front; set next back image and flip
+            setIndex((i) => {
+              const next = (i + 1) % backImages.length;
+              setBackImage(backImages[next]);
+              return next;
+            });
+            return true;
+          });
+        }}
       >
         <div className="flip-card-front rounded-full overflow-hidden">
           <Image
@@ -36,20 +79,23 @@ export default function FlipImage({ src, backSrc = null, width = 200, height = 2
             width={width}
             height={height}
             alt={alt}
-            className="rounded-full object-cover"
+            className="rounded-full object-cover object-center"
             onLoad={() => setLoaded(true)}
             priority
           />
         </div>
         <div
-          className="flip-card-back rounded-full group"
-          style={backSrc ? { backgroundImage: `url(${typeof backSrc === 'string' ? backSrc : backSrc.src})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
+          className="flip-card-back rounded-full"
+          style={backImage ? { backgroundImage: `url(${typeof backImage === 'string' ? backImage : backImage.src})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
         />
       </div>
-      {/* Hover message overlay */}
-      <div className="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold bg-black/60 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity rounded-full">
-        {hoverText}
-      </div>
+      {/* Hover overlay */}
+      {/* Hover icon */}
+      {hoverText && (
+        <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold bg-black/50 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity rounded-full">
+          {hoverText}
+        </div>
+      )}
     </div>
   );
 }
