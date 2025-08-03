@@ -12,16 +12,16 @@ export default function Home() {
     <main className="flex-1 flex flex-col items-center justify-center text-center px-4">
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         <div className="flex flex-col items-center justify-center gap-4 mb-6 md:flex-row">
-  <FlipImage
-    src={karin}
-    backImages={gallery}
-    autoSequence={sequence}
-    size={190}
-    sizeMd={210}
-    shiftY="-8%" 
-    alt="Profile photo"
-    className="flex-shrink-0"
-  />
+        <FlipImage
+          src={karin}
+          backImages={gallery}
+          autoSequence={sequence}
+          size={190}
+          sizeMd={210}
+          shiftY="-8%" 
+          alt="Profile photo"
+          className="flex-shrink-0"
+        />
   <h1 className="text-4xl md:text-6xl font-bold leading-none mt-4 md:mt-0 md:-ml-16 z-10">
     <span className="k-highlight">K</span>arin Fernandez
   </h1>

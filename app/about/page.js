@@ -10,6 +10,14 @@ export default function AboutPage() {
         Hi! I’m Karin, a software engineer passionate about crafting delightful digital experiences.
         This is a placeholder about page – feel free to replace this text with your story, skills and interests.
       </p>
+      <a
+        href="/files/karinfdez-resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+      >
+        Download Résumé
+      </a>
     </main>
   );
 }
