@@ -75,7 +75,7 @@ export default function FlipImage({ src, backImages = [], autoSequence = [], siz
           });
         }}
       >
-        <div className="flip-card-front rounded-full overflow-hidden">
+        <div className="flip-card-front rounded-full overflow-hidden cursor-pointer">
           <Image
             src={src}
             width={width}

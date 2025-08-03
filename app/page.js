@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen text-center px-4">
+    <main className="flex-1 flex flex-col items-center justify-center text-center px-4">
       <div className="max-w-2xl mx-auto">
         <FlipImage
           src={karin}
