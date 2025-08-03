@@ -1,5 +1,5 @@
 import FlipImage from "../components/FlipImage";
-import tulips from "./images/tulips.png";
+import tulips from "./images/flip-images/tulips.png";
 import Link from "next/link";
 
 export default function Home() {

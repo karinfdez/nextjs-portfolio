@@ -9,7 +9,7 @@ import { useState } from 'react';
  */
 import { useEffect } from 'react';
 
-export default function FlipImage({ src, backSrc = null, width = 200, height = 200, alt = '', className = '' }) {
+export default function FlipImage({ src, backSrc = null, width = 200, height = 200, alt = '', className = '', hoverText = '🖱️' }) {
   const [loaded, setLoaded] = useState(false);
   const [flipped, setFlipped] = useState(false);
 
@@ -23,7 +23,7 @@ export default function FlipImage({ src, backSrc = null, width = 200, height = 2
 
   return (
     <div
-      className={`flip-card inline-block ${className}`}
+      className={`flip-card inline-block group ${className}`}
       style={{ width: `${width}px`, height: `${height}px` }}
     >
       <div
@@ -42,9 +42,13 @@ export default function FlipImage({ src, backSrc = null, width = 200, height = 2
           />
         </div>
         <div
-          className="flip-card-back rounded-full"
+          className="flip-card-back rounded-full group"
           style={backSrc ? { backgroundImage: `url(${typeof backSrc === 'string' ? backSrc : backSrc.src})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
         />
+      </div>
+      {/* Hover message overlay */}
+      <div className="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold bg-black/60 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity rounded-full">
+        {hoverText}
       </div>
     </div>
   );
