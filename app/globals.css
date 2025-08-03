@@ -55,6 +55,11 @@
   text-shadow: 0 2px 4px rgba(0,0,0,0.55);
 }
 
+/* When avatar is flipped, make K white */
+.flip-card[data-flipped="true"] + h1 .k-highlight {
+  color: #ffffff;
+}
+
 html,
 body {
   height: 100%;
