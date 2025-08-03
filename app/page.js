@@ -16,8 +16,9 @@ export default function Home() {
     src={karin}
     backImages={gallery}
     autoSequence={sequence}
-    size={200}
-    sizeMd={225}
+    size={190}
+    sizeMd={210}
+    shiftY="-8%" 
     alt="Profile photo"
     className="flex-shrink-0"
   />
