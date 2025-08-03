@@ -27,8 +27,7 @@ export default function Home() {
   </h1>
         </div>
         <p className="text-xl md:text-2xl text-gray-400 mb-8">
-          Software Engineer passionate about building exceptional digital
-          experiences.
+          Hi! I'm Karin Fernandez, a Software Engineer passionate about building clean, functional, and fast web apps.
         </p>
         <Link
           href="/projects"
