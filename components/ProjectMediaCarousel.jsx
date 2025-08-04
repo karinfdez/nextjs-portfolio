@@ -54,7 +54,7 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
           {mediaItems.map((item, idx) => (
             <div
               key={idx}
-              className="embla__slide flex-[0_0_100%] bg-gray-900 flex items-center justify-center"
+              className="embla__slide flex-[0_0_100%] aspect-video bg-gray-900 flex items-center justify-center"
             >
               {item.type === "video" ? (
                 <iframe
@@ -70,7 +70,7 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
                   alt={`Screenshot ${idx + 1}`}
                   width={1280}
                   height={720}
-                  className="object-contain w-full h-auto"
+                  className="object-contain w-full h-full"
                   unoptimized
                 />
               )}
