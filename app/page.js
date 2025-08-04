@@ -1,6 +1,6 @@
 "use client";
 import FlipImage from "../components/FlipImage";
-import karin from "./images/flip-images/karin.png";
+import karin from "./images/karin.png";
 import tulips from "./images/flip-images/tulips.png";
 import Button from "../components/Button";
 // Add more images here as you drop them into flip-images folder
@@ -21,7 +21,6 @@ export default function Home() {
           autoSequence={sequence}
           size={190}
           sizeMd={210}
-          shiftY="-8%" 
           alt="Profile photo"
           className="flex-shrink-0"
         />

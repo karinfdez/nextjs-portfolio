@@ -6,7 +6,7 @@ import Image from "next/image";
 import Button from "../../components/Button";
 import AnimatedParagraph from "../../components/AnimatedParagraph";
 import AnimatedTag from "../../components/AnimatedTag";
-import profileImg from "../images/flip-images/karin.png";
+import profileImg from "../images/flip-images/karin-full.png";
 import AnimatedReveal from "../../components/AnimatedReveal";
 
 export default function AboutPage() {
