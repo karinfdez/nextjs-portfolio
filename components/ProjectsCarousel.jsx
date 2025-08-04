@@ -42,7 +42,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
           {projects.map(({ title, description, image, link }, idx) => (
             <motion.div
               key={idx}
-              className="embla__slide flex-[0_0_280px] md:flex-[0_0_340px] lg:flex-[0_0_360px] bg-gray-800/40 rounded-lg overflow-hidden border border-gray-700"
+              className="group embla__slide flex-[0_0_280px] md:flex-[0_0_340px] lg:flex-[0_0_360px] bg-gray-800/40 rounded-lg overflow-hidden border border-gray-700"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -55,7 +55,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
                     alt={title}
                     width={800}
                     height={450}
-                    className="object-cover w-full h-48 sm:h-56"
+                    className="object-cover w-full h-48 sm:h-56 transition-transform duration-300 group-hover:scale-105"
                     unoptimized
                   />
                 )}
