@@ -10,8 +10,8 @@ export default function ContactPage() {
     <main className="flex flex-col items-center justify-center h-screen px-4 text-center">
       <div className="relative mb-8 flex items-start justify-center">
         <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold">Get in Touch</h1>
-          <p className="max-w-xl text-lg text-gray-400">
+          <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-bold">Get in Touch</h1>
+          <p className="max-w-xl text-lg xl:text-xl text-gray-400">
             I’d love to connect — you can find me on the links below
           </p>
         </div>
