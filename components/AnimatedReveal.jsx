@@ -11,6 +11,6 @@ const AnimatedReveal = ({ children, delay = 0, className = "" }) => (
   >
     {children}
   </motion.div>
-);
+);                   
 
 export default AnimatedReveal;
