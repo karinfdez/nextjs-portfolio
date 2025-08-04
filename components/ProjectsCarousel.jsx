@@ -61,7 +61,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
                 )}
                 <div className="p-4 text-left space-y-2 bg-white text-gray-900">
                   <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 min-h-20">
                     {description}
                   </p>
                 </div>
