@@ -16,5 +16,11 @@ export const projects = [
       "description": "An AI-powered assistant built with Langchain that answers questions using internal company data.",
       "image": "/images/projects-images/langchain-chatbot.png",
       "link": "https://langchain-chatbot-pi.vercel.app/",
+    },
+    {
+      "title": "Pagas",
+      "description": "An online platform that facilitates the sale of products by creators directly to consumers using Stellar",
+      "image": "/images/projects-images/pagas.png",
+      "link": "https://langchain-chatbot-pi.vercel.app/",
     }
   ]
