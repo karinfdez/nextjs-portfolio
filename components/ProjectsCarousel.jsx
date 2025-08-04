@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
 
@@ -30,10 +30,10 @@ const NextButton = ({ enabled, onClick }) => (
 const ProjectsCarousel = ({ projects = [] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", slidesToScroll: 1 });
 
+  
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-  const canScrollPrev = emblaApi?.canScrollPrev();
-  const canScrollNext = emblaApi?.canScrollNext();
+  
 
   return (
     <div className="relative w-full max-w-4xl mx-auto p-6">
@@ -70,8 +70,8 @@ const ProjectsCarousel = ({ projects = [] }) => {
           ))}
         </div>
       </div>
-      <PrevButton enabled={canScrollPrev} onClick={scrollPrev} />
-      <NextButton enabled={canScrollNext} onClick={scrollNext} />
+      <PrevButton enabled={true} onClick={scrollPrev} />
+      <NextButton enabled={true} onClick={scrollNext} />
     </div>
   );
 };
