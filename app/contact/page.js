@@ -12,7 +12,7 @@ export default function ContactPage() {
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold">Get in Touch</h1>
           <p className="max-w-xl text-lg text-gray-400">
-            I’d love to connect — you can find me on the links below.
+            I’d love to connect — you can find me on the links below
           </p>
         </div>
         <AnimatedDots className="absolute -right-12 top-0 scale-90 mt-2" colorClass="bg-orange-500" />
