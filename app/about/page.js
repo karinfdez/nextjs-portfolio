@@ -10,7 +10,7 @@ import AnimatedReveal from "../../components/AnimatedReveal";
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4">
+    <main className="flex flex-col items-center justify-start h-screen px-4 pt-16 overflow-y-auto">
       <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Avatar */}
         <AnimatedReveal delay={0.1} className="hidden md:block">
@@ -28,22 +28,46 @@ export default function AboutPage() {
         {/* Bio */}
         <div className="flex-1 space-y-4 text-center md:text-left items-center md:items-start">
         <AnimatedReveal delay={0.2}>
-          <h1 className="text-3xl md:text-4xl font-bold">Karin Fernandez</h1>
-          <p className="text-gray-400">Miami, FL</p>
+        <div className="flex flex-col md:flex-row md:items-center gap-2">
+          <div className="flex flex-col">
+            <h1 className="text-3xl md:text-4xl font-bold">Karin Fernandez</h1>
+            <p className="text-gray-400">Miami, FL</p>
+          </div>
+          </div>
+          <div className="flex flex-col">
+          <a
+            href="/files/karinfdez-resume.pdf"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-1 text-md font-medium text-orange-400 hover:underline justify-center md:justify-start"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4"
+            >
+              <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2v2h14v-2H5z" />
+            </svg>
+            Download&nbsp;Resume
+          </a>
+        </div>
         </AnimatedReveal>
 
           <AnimatedParagraph className="text-lg leading-relaxed text-gray-300">
-            Hey I’m Karin, a software engineer focused on crafting clean, functional & fast web apps. I currently build delightful digital experiences at <span className="font-semibold text-orange-400">[Your Company]</span> and love everything around front-end, performance and great UX.
+          {`Hey, I’m Karin, a full-stack Software Engineer with 8+ years of experience building fast, scalable, and user-focused web applications. I’ve worked with technologies like Next.js, React, Supabase, Cloudflare Workers, Hygraph, MongoDB, and AWS Lambda to deliver high-performance platforms for marketplaces, CMS integrations, and real-time applications. My recent work includes building APIs that handle millions of requests, connecting Cloudflare Workers to external databases like MongoDB, and designing clean, serverless architectures optimized for speed and reliability.`}
           </AnimatedParagraph>
 
           {/* Tags */}
           <div className="flex flex-wrap gap-3 pt-2 justify-center md:justify-start">
             {[
-              "Web Dev",
-              "React / Next.js",
-              "UI / UX",
-              "Performance",
-              "Open Source",
+              "Next.js",
+              "React",
+              "Tailwind CSS",
+              "OpenAI API",
+              "Cloudflare AI Agents",
+              "LangChain",
+              "Supabase"
             ].map((tag, idx) => (
               <AnimatedTag
                 key={tag}
@@ -54,28 +78,18 @@ export default function AboutPage() {
               </AnimatedTag>
             ))}
           </div>
-          <AnimatedReveal delay={0.4}>
-            <Button
-              label="Download Resume"
-              href="/files/karinfdez-resume.pdf"
-              target="_blank"
-              rel="noopener"
-              borderColor="border-orange-500"
-              textColor="text-orange-500"
-              className="mt-4"
-            />
-          </AnimatedReveal>
+
          
         </div>
       </div>
 
       {/* long paragraph */}
-      <div className="max-w-3xl mt-12 text-lg leading-relaxed text-gray-300 text-center md:text-left space-y-6">
-        <AnimatedParagraph>
-          Over the past few years I’ve had the chance to work on projects ranging from e-commerce
-          sites serving millions of customers to tiny side-projects that taught me a ton about
-          product thinking. When I’m not coding you’ll find me exploring coffee shops around the
-          city or sketching new interface ideas.
+      <div className="max-w-4xl mt-12 text-lg leading-relaxed text-gray-300 text-center md:text-left space-y-6">
+        <AnimatedParagraph className="text-lg leading-relaxed text-gray-300">
+          {`Lately, I’ve been diving into AI-powered features and Cloudflare AI Agents, building tools that automate outreach and analyze data.`}
+        </AnimatedParagraph>
+        <AnimatedParagraph delay={0.2}>
+        {`Beyond code, I’m passionate about reading, trading, and dancing. Always curious, always learning.`}
         </AnimatedParagraph>
         <AnimatedParagraph delay={0.3}>What about you? What brings you here? <span className="" role="img" aria-label="smile">😊</span></AnimatedParagraph>
       </div>
