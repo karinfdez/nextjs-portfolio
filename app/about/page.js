@@ -57,7 +57,7 @@ export default function AboutPage() {
           </div>
           <AnimatedReveal delay={0.4}>
             <Button
-              label="Download Résumé"
+              label="Download Resume"
               href="/files/karinfdez-resume.pdf"
               target="_blank"
               rel="noopener"
