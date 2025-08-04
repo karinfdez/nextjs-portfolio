@@ -24,7 +24,7 @@ const NavLink = ({ href, children }) => {
       {(isActive || hovered) && (
         <motion.span
           layoutId="nav-underline"
-          className="absolute left-0 right-0 -bottom-1 h-0.5 bg-orange-500"
+          className="absolute left-0 right-0 -bottom-1 h-0.5 bg-orange-500 hidden md:block"
           transition={{ type: "spring", stiffness: 350, damping: 35, mass: 0.6 }}
         />
       )}

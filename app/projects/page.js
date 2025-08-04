@@ -2,13 +2,16 @@ export const metadata = {
   title: 'Projects – My Portfolio',
 };
 
+import ProjectsCarousel from "../../components/ProjectsCarousel";
+import { projects } from "../data/projects";
+
 export default function ProjectsPage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4 text-center">
+    <main className="flex flex-col items-center justify-center flex-1 overflow-hidden px-4 space-y-8">
       <h1 className="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
-      <p className="max-w-xl text-lg text-gray-400">
-        This page will showcase my work. Check back soon for a curated list of projects!
-      </p>
+      <ProjectsCarousel
+        projects={projects}
+      />
     </main>
   );
 }

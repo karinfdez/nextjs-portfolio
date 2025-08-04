@@ -1,12 +1,9 @@
 "use client";
 import FlipImage from "../components/FlipImage";
-import karin from "./images/karin.png";
-import tulips from "./images/flip-images/tulips.png";
 import Button from "../components/Button";
 // Add more images here as you drop them into flip-images folder
-const gallery = [tulips];
-const sequence = [tulips];
-import Link from "next/link";
+const gallery = ["/images/flip-images/tulips.png"];
+const sequence = ["/images/flip-images/tulips.png"];
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -16,7 +13,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto flex flex-col items-center relative">
         <div className="flex flex-col items-center justify-center gap-4 mb-6 md:flex-row">
         <FlipImage
-          src={karin}
+          src="/images/karin.png"
           backImages={gallery}
           autoSequence={sequence}
           size={190}
@@ -31,12 +28,6 @@ export default function Home() {
         <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl">
           Hi! I'm Karin Fernandez, a Software Engineer passionate about building clean, functional, and fast web apps.
         </p>
-        {/* <Link
-          href="/projects"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
-        >
-          View Projects
-        </Link> */}
         <Button
           label="View Projects"
           onClick={() => router.push("/projects")}

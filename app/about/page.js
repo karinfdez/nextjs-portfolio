@@ -6,7 +6,6 @@ import Image from "next/image";
 import Button from "../../components/Button";
 import AnimatedParagraph from "../../components/AnimatedParagraph";
 import AnimatedTag from "../../components/AnimatedTag";
-import profileImg from "../images/flip-images/karin-full.png";
 import AnimatedReveal from "../../components/AnimatedReveal";
 
 export default function AboutPage() {
@@ -17,7 +16,7 @@ export default function AboutPage() {
         <AnimatedReveal delay={0.1} className="hidden md:block">
         <div className="flex-shrink-0 mx-auto md:mx-0">
           <Image
-            src={profileImg}
+            src="/images/flip-images/karin-full.png"
             alt="Karin profile photo"
             width={260}
             height={260}
