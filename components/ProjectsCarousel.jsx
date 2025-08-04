@@ -59,9 +59,9 @@ const ProjectsCarousel = ({ projects = [] }) => {
                     unoptimized
                   />
                 )}
-                <div className="p-4 text-left space-y-2">
-                  <h3 className="text-xl font-semibold">{title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                <div className="p-4 text-left space-y-2 bg-white text-gray-900">
+                  <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
                     {description}
                   </p>
                 </div>
