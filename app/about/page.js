@@ -14,8 +14,8 @@ export default function AboutPage() {
     <main className="flex flex-col items-center justify-center min-h-screen px-4">
       <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Avatar */}
-        <AnimatedReveal delay={0.1}>
-        <div className="flex-shrink-0">
+        <AnimatedReveal delay={0.1} className="hidden md:block">
+        <div className="flex-shrink-0 mx-auto md:mx-0">
           <Image
             src={profileImg}
             alt="Karin profile photo"
@@ -27,7 +27,7 @@ export default function AboutPage() {
         </div>
         </AnimatedReveal>
         {/* Bio */}
-        <div className="flex-1 space-y-4">
+        <div className="flex-1 space-y-4 text-center md:text-left items-center md:items-start">
         <AnimatedReveal delay={0.2}>
           <h1 className="text-3xl md:text-4xl font-bold">Karin Fernandez</h1>
           <p className="text-gray-400">Miami, FL</p>
@@ -38,7 +38,7 @@ export default function AboutPage() {
           </AnimatedParagraph>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="flex flex-wrap gap-3 pt-2 justify-center md:justify-start">
             {[
               "Web Dev",
               "React / Next.js",
