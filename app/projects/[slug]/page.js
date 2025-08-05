@@ -1,8 +1,8 @@
-import ProjectMediaCarousel from "../../../components/ProjectMediaCarousel";
+import ProjectMediaCarousel from "../../components/ProjectMediaCarousel";
 import ReactMarkdown from "react-markdown";
 import { projects } from "../../data/projects";
 import Link from "next/link";
-import AnimatedReveal from "../../../components/AnimatedReveal";
+import AnimatedReveal from "../../components/AnimatedReveal";
 
 
 
@@ -30,7 +30,7 @@ export default function ProjectPage({ params }) {
   const { title, project_description_1, project_description_2, video, screenshots, githubLink, technologies } = project;
 
   return (
-    <main className="flex flex-col items-center px-4 py-20 space-y-8 max-w-4xl mx-auto">
+    <main className="flex flex-col px-4 py-20 space-y-8 max-w-4xl mx-auto">
       <AnimatedReveal delay={0.1}>
         <h1 className="text-4xl md:text-5xl font-bold text-center">{title}</h1>
       </AnimatedReveal>
@@ -43,7 +43,7 @@ export default function ProjectPage({ params }) {
       {/* Technologies */}
       {technologies?.length > 0 && (
         <AnimatedReveal delay={0.3}>
-          <section className="w-full">
+          <section className="w-full text-center sm:text-left">
             <h2 className="w-full text-center sm:text-left text-2xl font-semibold mb-4">Tools and Technologies</h2>
             <ul className="flex flex-wrap justify-center sm:justify-start gap-3">
               {technologies.map((tech) => (

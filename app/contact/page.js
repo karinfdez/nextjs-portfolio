@@ -2,9 +2,9 @@ export const metadata = {
   title: 'Contact – My Portfolio',
 };
 
-import SocialIcons from "../../components/SocialIcons";
-import AnimatedDots from "../../components/AnimatedDots";
-import AnimatedReveal from "../../components/AnimatedReveal";
+import SocialIcons from "../components/SocialIcons";
+import AnimatedDots from "../components/AnimatedDots";
+import AnimatedReveal from "../components/AnimatedReveal";
 
 export default function ContactPage() {
   return (

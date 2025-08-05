@@ -1,9 +1,9 @@
 import "./globals.css";
 
 import { Fraunces } from "next/font/google";
-import AnimatedDots from "../components/AnimatedDots";
-import Navigation from "../components/Navigation";
-import AnimatedReveal from "../components/AnimatedReveal";
+import AnimatedDots from "./components/AnimatedDots";
+import Navigation from "./components/Navigation";
+import AnimatedReveal from "./components/AnimatedReveal";
 
 const fraunces = Fraunces({
   subsets: ["latin"],

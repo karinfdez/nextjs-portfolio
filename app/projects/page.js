@@ -2,7 +2,7 @@ export const metadata = {
   title: 'Projects – My Portfolio',
 };
 
-import ProjectsCarousel from "../../components/ProjectsCarousel";
+import ProjectsCarousel from "../components/ProjectsCarousel";
 import { projects } from "../data/projects";
 
 export default function ProjectsPage() {

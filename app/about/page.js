@@ -3,9 +3,9 @@ export const metadata = {
 };
 
 import Image from "next/image";
-import AnimatedParagraph from "../../components/AnimatedParagraph";
-import AnimatedTag from "../../components/AnimatedTag";
-import AnimatedReveal from "../../components/AnimatedReveal";
+import AnimatedParagraph from "../components/AnimatedParagraph";
+import AnimatedTag from "../components/AnimatedTag";
+import AnimatedReveal from "../components/AnimatedReveal";
 
 export default function AboutPage() {
   return (
