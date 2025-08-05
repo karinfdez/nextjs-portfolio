@@ -60,6 +60,16 @@
   color: #ffffff;
 }
 
+/* AnimatedDots hover styles */
+.hover-animate {
+  transition: all 0.7s ease;
+}
+
+.hover-animate:hover {
+  box-shadow: 0 0 8px #ff7a00;
+}
+
+
 html,
 body {
   height: 100%;

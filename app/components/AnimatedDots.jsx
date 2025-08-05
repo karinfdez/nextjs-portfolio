@@ -1,8 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import "./animatedDots.css";
+
 // Vertical animated dot columns
-const AnimatedDots = ({ className = "", colorClass = "bg-white", isClickable = false }) => {
+const AnimatedDots = ({ 
+  className = "", 
+  colorClass = "bg-white", 
+  isClickable = false,
+  animateOnHover = false
+}) => {
   const columns = [4, 8]; // adjust counts as needed
   const router = useRouter();
 
@@ -10,7 +18,7 @@ const AnimatedDots = ({ className = "", colorClass = "bg-white", isClickable = f
     <div
       onClick={() => isClickable && router.push("/")}
       aria-label="Go to homepage"
-      className={`hidden md:flex p-2 ${className} space-x-4 z-10 ${isClickable ? "cursor-pointer" : ""}`}
+      className={`hidden md:flex p-2 ${className} space-x-4 z-10 ${animateOnHover ? 'hover-animate' : ''} ${isClickable ? "cursor-pointer" : ""}`}
     >
       {columns.map((count, colIdx) => (
         <div key={colIdx} className="flex flex-col items-center space-y-4">
