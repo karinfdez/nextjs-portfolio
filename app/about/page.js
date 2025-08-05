@@ -90,7 +90,6 @@ export default function AboutPage() {
         <AnimatedParagraph delay={0.2}>
         {`Beyond code, I’m passionate about reading, trading, and dancing. Always curious, always learning.`}
         </AnimatedParagraph>
-        <AnimatedParagraph delay={0.3}>What about you? What brings you here? <span className="" role="img" aria-label="smile">😊</span></AnimatedParagraph>
       </div>
     </main>
   );
