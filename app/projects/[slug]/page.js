@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { projects } from "../../data/projects";
 import Link from "next/link";
 import AnimatedReveal from "../../components/AnimatedReveal";
-
+import AnimatedTag from "../../components/AnimatedTag";
 
 
 export const dynamicParams = false; // pre-generate pages at build time
@@ -74,12 +74,12 @@ export default function ProjectPage({ params }) {
             <h2 className="w-full text-center sm:text-left text-2xl font-semibold mb-4">Tools and Technologies</h2>
             <ul className="flex flex-wrap justify-center sm:justify-start gap-3">
               {technologies.map((tech) => (
-                <li
+                <AnimatedTag
                   key={tech}
                   className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm"
                 >
                   {tech}
-                </li>
+                </AnimatedTag>
               ))}
             </ul>
           </section>
