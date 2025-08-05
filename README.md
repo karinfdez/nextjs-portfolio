@@ -102,7 +102,6 @@ Animation settings can be adjusted in the respective components:
 
 ## Deployment
 
-This project can be easily deployed to Vercel:
+This project is deployed on Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/karinfdez/nextjs-portfolio)
 
