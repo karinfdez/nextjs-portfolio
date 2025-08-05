@@ -4,13 +4,12 @@ A modern, responsive portfolio website built with Next.js, Tailwind CSS, and Fra
 
 ## Features
 
-- 🚀 Built with Next.js 14
-- 🎨 Styled with Tailwind CSS
-- ✨ Smooth animations with Framer Motion
-- 📱 Fully responsive design
-- 🖼️ Project showcases with carousels
-- 📝 Markdown support for project descriptions
-- 🔄 Dynamic routing for project pages
+- Built with Next.js 14
+- Styled with Tailwind CSS
+- Smooth animations with Framer Motion
+- Fully responsive design
+- Project showcases with carousels
+- Dynamic routing for project pages
 
 ## Pages
 
@@ -107,13 +106,3 @@ This project can be easily deployed to Vercel:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/karinfdez/nextjs-portfolio)
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Embla Carousel](https://www.embla-carousel.com/)
