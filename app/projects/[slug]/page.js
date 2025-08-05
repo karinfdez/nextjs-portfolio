@@ -1,6 +1,10 @@
 import ProjectMediaCarousel from "../../../components/ProjectMediaCarousel";
+import ReactMarkdown from "react-markdown";
 import { projects } from "../../data/projects";
 import Link from "next/link";
+import AnimatedReveal from "../../../components/AnimatedReveal";
+
+
 
 export const dynamicParams = false; // pre-generate pages at build time
 
@@ -23,7 +27,7 @@ export default function ProjectPage({ params }) {
     );
   }
 
-  const { title, description, video, screenshots, link, technologies } = project;
+  const { title, project_description_1, project_description_2, video, screenshots, cardLink, githubLink, technologies } = project;
 
   return (
     <main className="flex flex-col items-center px-4 pb-16 space-y-8 max-w-4xl mx-auto">
@@ -32,17 +36,50 @@ export default function ProjectPage({ params }) {
       {/* Carousel */}
       <ProjectMediaCarousel video={video} screenshots={screenshots} />
 
-      {/* Description */}
-      <section className="prose prose-lg dark:prose-invert max-w-none text-left">
-        <p>{description}</p>
-      </section>
+      {/* Technologies */}
+      {technologies?.length > 0 && (
+        <AnimatedReveal delay={0.1}>
+          <section className="w-full">
+            <h2 className="flex w-full text-start text-2xl font-semibold mb-4">Tools and Technologies</h2>
+            <ul className="flex flex-wrap justify-center gap-3">
+              {technologies.map((tech) => (
+                <li
+                  key={tech}
+                  className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </AnimatedReveal>
+       
+      )}
+
+      {project_description_1 && (
+        <AnimatedReveal delay={0.2}>
+          <div className="text-2xl font-semibold mb-4 text-center flex text-start w-full pt-4">Project Description</div>
+          <section className="text-xl max-w-none text-left">
+            <ReactMarkdown>{project_description_1}</ReactMarkdown>
+          </section>
+        </AnimatedReveal>
+      )}
+
+      {project_description_2 && (
+        <AnimatedReveal delay={0.3}>
+          <section className="text-xl max-w-none text-left">
+            <ReactMarkdown>{project_description_2}</ReactMarkdown>
+          </section>
+        </AnimatedReveal>
+      )}
+
 
       {/* GitHub link */}
-      {link && (
+      {githubLink && (
         <Link
-          href={link}
+          href={githubLink}
           target="_blank"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors"
+          className="inline-flex items-center gap-2 px-8 py-2 border-2 border-orange-500 text-orange-500 transform hover:scale-105 transition-transform duration-200 mt-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,23 +95,6 @@ export default function ProjectPage({ params }) {
           </svg>
           View on GitHub
         </Link>
-      )}
-
-      {/* Technologies */}
-      {technologies?.length > 0 && (
-        <section className="w-full">
-          <h2 className="text-2xl font-semibold mb-4 text-center">Technologies Used</h2>
-          <ul className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech) => (
-              <li
-                key={tech}
-                className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm"
-              >
-                {tech}
-              </li>
-            ))}
-          </ul>
-        </section>
       )}
     </main>
   );

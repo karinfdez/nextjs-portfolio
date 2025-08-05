@@ -39,7 +39,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
     <div className="relative w-full max-w-4xl mx-auto p-6">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-8 px-4 md:px-6">
-          {projects.map(({ title, description, image, link }, idx) => (
+          {projects.map(({ title, cardDescription, image, cardLink }, idx) => (
             <motion.div
               key={idx}
               className="group embla__slide flex-[0_0_280px] md:flex-[0_0_340px] lg:flex-[0_0_360px] bg-gray-800/40 rounded-lg overflow-hidden border border-gray-700"
@@ -48,7 +48,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
             >
-              <a href={link ?? "#"} target="_blank" rel="noopener noreferrer" className="block w-full">
+              <a href={cardLink ?? "#"} target="_blank" rel="noopener noreferrer" className="block w-full">
                 {image && (
                   <Image
                     src={image}
@@ -62,7 +62,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
                 <div className="p-4 text-left space-y-2 bg-white text-gray-900">
                   <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 min-h-20">
-                    {description}
+                    {cardDescription}
                   </p>
                 </div>
               </a>
