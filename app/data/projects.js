@@ -35,25 +35,17 @@ export const projects = [
     {
       title: "Chatbot",
       slug: "chatbot",
-      cardDescription: "An AI-powered assistant built with Langchain that answers questions using internal company data.",
-      project_description_1: "An AI-powered assistant built with Langchain that answers questions using internal company data.",
+      cardDescription: "An AI-powered assistant built with Langchain JS that answers questions using internal company data.",
+      project_description_1: `The LumaTech Knowledge Chatbot is an AI-powered web app that helps users ask questions about a fictional company and get accurate answers based on real documents. 
+        On one side, it shows the company’s info, and on the other, you can chat with the bot. It uses LangChain.js, OpenAI, and Supabase to find the most relevant details and 
+        generate responses.`,
+      project_description_2: `Under the hood, it turns your questions into vectors, compares them to stored data using Supabase’s vector search, and sends everything to OpenAI 
+      to generate a clear answer. The app also includes smart rate limiting with Upstash Redis and secure API endpoints to keep things safe and reliable.`,
       image: "/images/projects-images/langchain-chatbot.png",
       cardLink: "/projects/chatbot",
       githubLink: "https://github.com/karinfdez/langchain-chatbot-showcase/blob/main/README.md",
       video: "",
-      screenshots: ["/images/screenshots/langchain/langchain-1.png", "/images/screenshots/langchain/langchain-2.png"],
-      technologies: ["Next.js", "LangChain", "Tailwind CSS"],
-    },
-    {
-      title: "Pagas",
-      slug: "pagas",
-      cardDescription: "An online platform that facilitates the sale of products by creators directly to consumers using Stellar",
-      project_description_1: "An online platform that facilitates the sale of products by creators directly to consumers using Stellar",
-      image: "/images/projects-images/pagas.png",
-      cardLink: "https://langchain-chatbot-pi.vercel.app/",
-      githubLink: "https://github.com/karinfdez/pagas-showcase/blob/main/README.md",
-      video: "",
-      screenshots: ["/images/projects-images/pagas.png"],
-      technologies: ["Next.js", "Stellar", "Tailwind CSS"],
+      screenshots: ["/images/screenshots/langchain/langchain-1.png", "/images/screenshots/langchain/langchain-2.png", "/images/screenshots/langchain/langchain-3.png"],
+      technologies: ["Next.js", "LangChain JS", "Tailwind CSS", "Supabase"],
     }
   ]

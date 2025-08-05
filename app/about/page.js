@@ -3,14 +3,13 @@ export const metadata = {
 };
 
 import Image from "next/image";
-import Button from "../../components/Button";
 import AnimatedParagraph from "../../components/AnimatedParagraph";
 import AnimatedTag from "../../components/AnimatedTag";
 import AnimatedReveal from "../../components/AnimatedReveal";
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center justify-start h-screen px-4 pt-20">
+    <main className="flex flex-col items-center justify-start h-screen px-4 pt-12 md:pt-20">
       <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Avatar */}
         <AnimatedReveal delay={0.1} className="hidden md:block">
@@ -84,7 +83,7 @@ export default function AboutPage() {
       </div>
 
       {/* long paragraph */}
-      <div className="max-w-4xl mt-12 text-lg leading-relaxed text-gray-300 text-center md:text-left space-y-6">
+      <div className="max-w-4xl mt-12 text-lg leading-relaxed text-gray-300 text-center md:text-left space-y-6 pb-8 md:pb-0">
         <AnimatedParagraph className="text-lg leading-relaxed text-gray-300">
           {`Lately, I’ve been diving into AI-powered features and Cloudflare AI Agents, building tools that automate outreach and analyze data.`}
         </AnimatedParagraph>
