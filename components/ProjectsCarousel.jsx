@@ -38,7 +38,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
   return (
     <div className="relative w-full max-w-4xl mx-auto p-6">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-8 px-4 md:px-6">
+        <div className="flex gap-8 px-4">
           {projects.map(({ title, cardDescription, image, cardLink }, idx) => (
             <motion.div
               key={idx}
