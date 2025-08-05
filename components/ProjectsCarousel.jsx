@@ -48,7 +48,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
             >
-              <a href={cardLink ?? "#"} target="_blank" rel="noopener noreferrer" className="block w-full">
+              <a href={cardLink ?? "#"} className="block w-full">
                 {image && (
                   <Image
                     src={image}

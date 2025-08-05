@@ -22,7 +22,7 @@ export const projects = [
       githubLink: "https://github.com/karinfdez/email-service-showcase/blob/main/README.md",
       video: "https://www.youtube.com/watch?v=062hPy_t3XI",
       screenshots: ["/images/projects-images/email-service.png"],
-      technologies: ["Next.js", "Cloudflare AI", "Tailwind CSS"],
+      technologies: ["Next.js", "Cloudflare AI Agents", "Tailwind CSS", "Resend", "OpenAI API", "Supabase"],
     },
     {
       title: "Chatbot",

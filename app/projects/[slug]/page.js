@@ -31,14 +31,18 @@ export default function ProjectPage({ params }) {
 
   return (
     <main className="flex flex-col items-center px-4 pb-16 space-y-8 max-w-4xl mx-auto">
-      <h1 className="text-4xl md:text-5xl font-bold mt-8 text-center">{title}</h1>
+      <AnimatedReveal delay={0.1}>
+        <h1 className="text-4xl md:text-5xl font-bold mt-8 text-center">{title}</h1>
+      </AnimatedReveal>
 
       {/* Carousel */}
-      <ProjectMediaCarousel video={video} screenshots={screenshots} />
+      <AnimatedReveal delay={0.1}>
+        <ProjectMediaCarousel video={video} screenshots={screenshots} />
+      </AnimatedReveal>
 
       {/* Technologies */}
       {technologies?.length > 0 && (
-        <AnimatedReveal delay={0.1}>
+        <AnimatedReveal delay={0.3}>
           <section className="w-full">
             <h2 className="flex w-full text-start text-2xl font-semibold mb-4">Tools and Technologies</h2>
             <ul className="flex flex-wrap justify-center gap-3">
@@ -57,7 +61,7 @@ export default function ProjectPage({ params }) {
       )}
 
       {project_description_1 && (
-        <AnimatedReveal delay={0.2}>
+        <AnimatedReveal delay={0.4}>
           <div className="text-2xl font-semibold mb-4 text-center flex text-start w-full pt-4">Project Description</div>
           <section className="text-xl max-w-none text-left">
             <ReactMarkdown>{project_description_1}</ReactMarkdown>
@@ -66,7 +70,7 @@ export default function ProjectPage({ params }) {
       )}
 
       {project_description_2 && (
-        <AnimatedReveal delay={0.3}>
+        <AnimatedReveal delay={0.5}>
           <section className="text-xl max-w-none text-left">
             <ReactMarkdown>{project_description_2}</ReactMarkdown>
           </section>
@@ -76,6 +80,7 @@ export default function ProjectPage({ params }) {
 
       {/* GitHub link */}
       {githubLink && (
+        <AnimatedReveal delay={0.6}>
         <Link
           href={githubLink}
           target="_blank"
@@ -95,6 +100,7 @@ export default function ProjectPage({ params }) {
           </svg>
           View on GitHub
         </Link>
+        </AnimatedReveal>
       )}
     </main>
   );
