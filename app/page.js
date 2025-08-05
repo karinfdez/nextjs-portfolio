@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center justify-center text-center px-4">
       <div className="max-w-6xl mx-auto flex flex-col items-center relative">
-      <AnimatedReveal delay={0.1}>
+      <AnimatedReveal delay={0.2}>
         <div className="flex flex-col items-center justify-center gap-4 mb-6 md:flex-row">
           <FlipImage
             src="/images/karin.png"

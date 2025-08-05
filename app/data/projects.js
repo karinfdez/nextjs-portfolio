@@ -16,7 +16,15 @@ export const projects = [
       title: "Email Service",
       slug: "email-service",
       cardDescription: "An AI-powered email assistant built with Cloudflare AI Agents.",
-      project_description_1: "An AI-powered email assistant built with Cloudflare AI Agents.",
+      project_description_1: `This project is an AI-driven email service built with Cloudflare Workers 
+      and the Cloudflare AI Agents SDK, designed to streamline legal outreach campaigns. 
+      It automatically generates and sends personalized emails using GPT-4, 
+      based on user profile data stored in Supabase. The system is fully serverless, scalable, 
+      and structured around specialized agents—each responsible for fetching data, processing email content, or dispatching messages`,
+      project_description_2: `Behind the scenes, it uses Cloudflare Queues and Durable Objects to batch 
+      and manage parallel workloads efficiently while enforcing rate and token limits. 
+      The architecture is optimized for reliability and speed, allowing legal teams to automate 
+      outreach at scale without compromising personalization.`,
       image: "/images/projects-images/email-service.png",
       cardLink: "/projects/email-service",
       githubLink: "https://github.com/karinfdez/email-service-showcase/blob/main/README.md",
