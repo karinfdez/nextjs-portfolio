@@ -29,7 +29,7 @@ export const projects = [
       cardLink: "/projects/email-service",
       githubLink: "https://github.com/karinfdez/email-service-showcase/blob/main/README.md",
       video: "https://www.youtube.com/watch?v=062hPy_t3XI",
-      screenshots: ["/images/projects-images/email-service.png"],
+      screenshots: ["/images/screenshots/email-service/email-service-1.png", "/images/screenshots/email-service/email-service-2.png"],
       technologies: ["Next.js", "Cloudflare AI Agents", "Tailwind CSS", "Resend", "OpenAI API", "Supabase"],
     },
     {
@@ -41,7 +41,7 @@ export const projects = [
       cardLink: "/projects/chatbot",
       githubLink: "https://github.com/karinfdez/langchain-chatbot-showcase/blob/main/README.md",
       video: "",
-      screenshots: ["/images/projects-images/langchain-chatbot.png"],
+      screenshots: ["/images/screenshots/langchain/langchain-1.png", "/images/screenshots/langchain/langchain-2.png"],
       technologies: ["Next.js", "LangChain", "Tailwind CSS"],
     },
     {
