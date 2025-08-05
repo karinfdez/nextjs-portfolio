@@ -71,7 +71,6 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
                   width={1280}
                   height={720}
                   className="object-contain w-full h-full"
-                  unoptimized
                 />
               )}
             </div>

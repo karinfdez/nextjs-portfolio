@@ -70,8 +70,14 @@ const ProjectsCarousel = ({ projects = [] }) => {
           ))}
         </div>
       </div>
-      <PrevButton enabled={true} onClick={scrollPrev} />
-      <NextButton enabled={true} onClick={scrollNext} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.2 }} // Delay slightly to match with first cards
+      >
+        <PrevButton enabled={true} onClick={scrollPrev} />
+        <NextButton enabled={true} onClick={scrollNext} />
+      </motion.div>
     </div>
   );
 };
