@@ -61,13 +61,14 @@ const SocialTab = ({ isMobile = false }) => {
               onMouseEnter={() => setHoveredIcon(item.id)}
               onMouseLeave={() => setHoveredIcon(null)}
               whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
               whileTap={{ scale: 0.95 }}
               title={item.name}
             >
               <div 
                 className={`
                   ${hoveredIcon === item.id ? 'text-orange-400' : 'text-orange-500'} 
-                  transition-colors duration-200
+                  transition-colors duration-500
                 `}
               >
                 {item.icon}
