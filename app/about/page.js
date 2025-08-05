@@ -1,11 +1,10 @@
-export const metadata = {
-  title: 'About – My Portfolio',
-};
+"use client";
 
 import Image from "next/image";
 import AnimatedParagraph from "../components/AnimatedParagraph";
 import AnimatedTag from "../components/AnimatedTag";
 import AnimatedReveal from "../components/AnimatedReveal";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
@@ -13,7 +12,14 @@ export default function AboutPage() {
       <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Avatar */}
         <AnimatedReveal delay={0.1} className="hidden md:block">
-        <div className="flex-shrink-0 mx-auto md:mx-0">
+        <motion.div
+          whileHover={{
+            scale: 1.02,
+          }}
+          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+          className="overflow-hidden rounded-xl border-1 border-orange-500"
+        >
+          <div className="flex-shrink-0 mx-auto md:mx-0">
           <Image
             src="/images/flip-images/karin-full.png"
             alt="Karin profile photo"
@@ -22,7 +28,9 @@ export default function AboutPage() {
             priority
             className="rounded-2xl object-cover border-4 border-orange-500"
           />
-        </div>
+          </div>
+        </motion.div>
+      
         </AnimatedReveal>
         {/* Bio */}
         <div className="flex-1 space-y-4 text-center md:text-left items-center md:items-start">
@@ -34,22 +42,35 @@ export default function AboutPage() {
           </div>
           </div>
           <div className="flex flex-col">
-          <a
-            href="/files/karinfdez-resume.pdf"
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center gap-1 text-md font-medium text-orange-400 hover:underline justify-center md:justify-start"
+          <motion.div
+            className="inline-block"
+            whileHover="hover"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-4 h-4"
+            <motion.a
+              href="/files/karinfdez-resume.pdf"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1 text-lg font-medium text-orange-500 justify-center md:justify-start hover:text-orange-400"
+              variants={{
+                hover: { scale: 1.02 }
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2v2h14v-2H5z" />
-            </svg>
-            Download&nbsp;Resume
-          </a>
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-5 h-5"
+                variants={{
+                  hover: { y: 2 }
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2v2h14v-2H5z" />
+              </motion.svg>
+              Download&nbsp;Resume
+            </motion.a>
+          </motion.div>
         </div>
         </AnimatedReveal>
 
