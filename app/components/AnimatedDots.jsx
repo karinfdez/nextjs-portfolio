@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import "./animatedDots.css";
 
 // Vertical animated dot columns
 const AnimatedDots = ({ 
