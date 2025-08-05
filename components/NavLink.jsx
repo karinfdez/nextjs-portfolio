@@ -21,13 +21,20 @@ const NavLink = ({ href, children }) => {
       onMouseLeave={() => setHovered(false)}
     >
       {children}
-      {(isActive || hovered) && (
-        <motion.span
-          layoutId="nav-underline"
-          className="absolute left-0 right-0 -bottom-1 h-0.5 bg-orange-500 hidden md:block"
-          transition={{ type: "spring", stiffness: 350, damping: 35, mass: 0.6 }}
-        />
-      )}
+      <motion.span
+        layoutId="nav-underline"
+        className="absolute left-0 right-0 -bottom-1 h-0.5 hidden md:block"
+        initial={{ scaleX: 0, opacity: 0 }}
+        animate={{ 
+          scaleX: isActive || hovered ? 1 : 0,
+          opacity: isActive || hovered ? 1 : 0,
+          backgroundColor: isActive || hovered ? "#f97316" : "transparent"
+        }}
+        transition={{ 
+          duration: 0.5,
+          ease: "easeInOut"
+        }}
+      />
     </Link>
   );
 };
