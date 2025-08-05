@@ -10,7 +10,7 @@ import AnimatedReveal from "../../components/AnimatedReveal";
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen px-4 pt-20">
+    <main className="flex flex-col items-center justify-start h-screen px-4 pt-20">
       <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Avatar */}
         <AnimatedReveal delay={0.1} className="hidden md:block">
