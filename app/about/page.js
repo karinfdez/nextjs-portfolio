@@ -53,7 +53,7 @@ export default function AboutPage() {
         </div>
         </AnimatedReveal>
 
-          <AnimatedParagraph className="text-lg leading-relaxed text-gray-300">
+          <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
           {`Hey, I’m Karin, a full-stack Software Engineer with 8+ years of experience building fast, scalable, and user-focused web applications. I’ve worked with technologies like Next.js, React, Supabase, Cloudflare Workers, Hygraph, MongoDB, and AWS Lambda to deliver high-performance platforms for marketplaces, CMS integrations, and real-time applications. My recent work includes building APIs that handle millions of requests, connecting Cloudflare Workers to external databases like MongoDB, and designing clean, serverless architectures optimized for speed and reliability.`}
           </AnimatedParagraph>
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
       </div>
 
       {/* long paragraph */}
-      <div className="max-w-4xl mt-12 text-lg leading-relaxed text-gray-300 text-center md:text-left space-y-6 pb-8 xl:pb-0">
+      <div className="max-w-4xl mt-12 text-lg leading-relaxed text-gray-300 text-left space-y-6 pb-8 xl:pb-0">
         <AnimatedParagraph className="text-lg leading-relaxed text-gray-300">
           {`Lately, I’ve been diving into AI-powered features and Cloudflare AI Agents, building tools that automate outreach and analyze data.`}
         </AnimatedParagraph>
