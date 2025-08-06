@@ -22,7 +22,7 @@ const Button = ({
     <Component
       {...extraProps}
       whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      transition={{ type: "spring", stiffness: 100, damping: 10 }}
       className={`inline-block px-8 py-2 border-2 ${borderColor} bg-transparent transition-colors duration-200 ${textColor} ${className}`}
     >
       {label}
