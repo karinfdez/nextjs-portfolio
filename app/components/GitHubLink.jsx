@@ -14,7 +14,7 @@ export default function GitHubLink({ url }) {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 font-medium"
+          className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-400 font-medium"
         >
           <span>View on GitHub</span>
           <motion.svg
