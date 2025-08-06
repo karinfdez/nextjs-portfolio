@@ -39,14 +39,9 @@ const SocialTab = ({ isMobile = false }) => {
   ];
 
 
-  // Adjust the layout based on whether it's mobile or desktop
-  const containerClass = isMobile 
-    ? "flex justify-center items-center space-x-4" // Horizontal layout for mobile
-    : "flex flex-col items-center"; // Vertical layout for desktop
-    
-  const iconsContainerClass = isMobile
-    ? "flex space-x-4 p-3 rounded-lg bg-opacity-90" // Horizontal spacing for mobile
-    : "flex flex-col space-y-4 p-3 rounded-lg bg-opacity-90"; // Vertical spacing for desktop
+  // Always use horizontal layout regardless of device type
+  const containerClass = "flex justify-center items-center";
+  const iconsContainerClass = "flex space-x-4 p-3 rounded-lg bg-opacity-90"; // Horizontal spacing for all devices
 
   return (
     <div className={`socialTab ${containerClass}`}>
