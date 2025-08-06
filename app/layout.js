@@ -15,6 +15,13 @@ const fraunces = Fraunces({
 export const metadata = {
   title: "My Portfolio",
   description: "Personal software engineer portfolio",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", sizes: "48x48" },
+       { url: "/favicon.ico", sizes: "64x64" },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
