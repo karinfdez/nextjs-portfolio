@@ -1,0 +1,126 @@
+"use client";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+
+const HamburgerMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  
+  // Handle navigation with delay
+  const handleNavigation = (e) => {
+    // Don't immediately close the menu
+    e.preventDefault();
+    const href = e.currentTarget.href;
+    
+    // Keep the menu open during transition
+    setTimeout(() => {
+      window.location.href = href;
+    }, 300); // Match the transition duration
+  };
+  
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('.mobile-menu-container')) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      // Save the current scroll position
+      const scrollY = window.scrollY;
+      
+      // Apply styles to lock scroll
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.overflow = 'hidden';
+      
+      // Store the scroll position as a data attribute
+      document.body.setAttribute('data-scroll-position', scrollY.toString());
+    } else {
+      // Get the stored scroll position
+      const scrollY = parseInt(document.body.getAttribute('data-scroll-position') || '0');
+      
+      // Remove styles that prevent scrolling
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.overflow = '';
+      
+      // Restore scroll position
+      window.scrollTo(0, scrollY);
+    }
+    
+    return () => {
+      // Cleanup function to ensure body styles are reset
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  return (
+    <div className="relative block md:hidden mobile-menu-container">
+      {/* Hamburger Icon with Animation */}
+      <button
+        onClick={toggleMenu}
+        className="z-50 relative flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+        aria-label="Menu"
+      >
+        <div 
+          className={`w-6 h-0.5 bg-orange-500 rounded-full transition-all duration-300 ease-in-out ${isOpen ? 'transform rotate-45 translate-y-1.5' : ''}`}
+        />
+        <div 
+          className={`w-6 h-0.5 bg-orange-500 rounded-full transition-all duration-300 ease-in-out mt-1.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}
+        />
+        <div 
+          className={`w-6 h-0.5 bg-orange-500 rounded-full transition-all duration-300 ease-in-out mt-1.5 ${isOpen ? 'transform -rotate-45 -translate-y-1.5' : ''}`}
+        />
+      </button>
+
+      {/* Menu Items */}
+      <div
+        className={`fixed top-0 left-0 w-full h-screen bg-gray-900 text-white z-40 transition-all duration-300 ease-in-out transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'}`}
+      >
+        <div className="flex flex-col items-center justify-center h-full py-16">
+          <ul className="flex flex-col items-center space-y-12 text-3xl font-medium">
+            <li>
+              <Link href="/" className="text-white hover:text-orange-500 transition-colors duration-300" onClick={handleNavigation}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="text-white hover:text-orange-500 transition-colors duration-300" onClick={handleNavigation}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects" className="text-white hover:text-orange-500 transition-colors duration-300" onClick={handleNavigation}>
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="text-white hover:text-orange-500 transition-colors duration-300" onClick={handleNavigation}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HamburgerMenu;

@@ -1,18 +1,16 @@
 "use client";
-
 import NavLink from "./NavLink";
 
 const links = [
-  { href: "/", label: "Home", mobileOnly: true },
-  { href: "/about", label: "About" },
+  { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About" },
 ];
 
 const Navigation = () => (
   <nav className="space-x-6">
-    {links.map(({ href, label, mobileOnly }) => (
-      <span key={href} className={mobileOnly ? "md:hidden" : ""}>
+    {links.map(({ href, label }) => (
+      <span key={href}>
         <NavLink href={href}>{label}</NavLink>
       </span>
     ))}
