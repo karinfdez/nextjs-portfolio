@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
 
@@ -28,15 +28,30 @@ const NextButton = ({ enabled, onClick }) => (
 );
 
 const ProjectsCarousel = ({ projects = [] }) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "start", slidesToScroll: 1 });
 
   
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
   
+  useEffect(() => {
+    if (!emblaApi) return;
+  
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+  
+    emblaApi.on("select", onSelect);
+    onSelect();
+  
+    return () => emblaApi.off("select", onSelect); // clean up
+  }, [emblaApi]);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto p-6">
+    <>
+
+<div className="relative w-full max-w-4xl mx-auto p-6">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-8">
           {projects.map(({ title, cardDescription, image, cardLink }, idx) => (
@@ -84,6 +99,21 @@ const ProjectsCarousel = ({ projects = [] }) => {
         <NextButton enabled={true} onClick={scrollNext} />
       </motion.div>
     </div>
+    {/* Pagination */}
+    {emblaApi && (
+      <div className="mt-4 flex justify-center gap-2">
+      {projects.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => emblaApi.scrollTo(index)}
+          className={`w-2 h-2 rounded-full ${
+            selectedIndex === index ? "bg-orange-500" : "bg-gray-500/40"
+          } transition-all`}
+        />
+      ))}
+      </div>
+    )}
+    </>
   );
 };
 
