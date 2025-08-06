@@ -55,7 +55,7 @@ export default function ProjectPage({ params }) {
               {technologies.map((tech) => (
                 <AnimatedTag
                   key={tech}
-                  className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm"
+                  className="px-3 py-1 rounded-full bg-gray-700/40 text-sm text-gray-300"
                 >
                   {tech}
                 </AnimatedTag>
