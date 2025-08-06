@@ -38,6 +38,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
   useEffect(() => {
     if (!emblaApi) return;
   
+    // Subscribe to Embla's select event to update that state whenever the carousel changes
     const onSelect = () => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
     };
@@ -50,69 +51,68 @@ const ProjectsCarousel = ({ projects = [] }) => {
 
   return (
     <>
-
-<div className="relative w-full max-w-4xl mx-auto p-6">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-8">
-          {projects.map(({ title, cardDescription, image, cardLink }, idx) => (
-            <motion.div
-              key={idx}
-              className="group embla__slide flex-[0_0_280px] md:flex-[0_0_340px] lg:flex-[0_0_360px] bg-gray-800/40 rounded-lg overflow-hidden border border-gray-700"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-            >
-              <a href={cardLink ?? "#"} className="block w-full">
-                {image && (
-                  <Image
-                    src={image}
-                    alt={title}
-                    width={800}
-                    height={450}
-                    className="object-cover w-full h-48 sm:h-56 transition-transform duration-700 ease-out group-hover:scale-105"
-                    unoptimized
-                  />
-                )}
-                <div className="p-4 text-left space-y-2 bg-white text-gray-900">
-                  <motion.div
-                    whileHover={{ x: 4 }}
-                    transition={{ type: "spring", stiffness: 100 }}
-                  >
-                    <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 min-h-20">
-                      {cardDescription}
-                    </p>
-                  </motion.div>
-                </div>
-              </a>
-            </motion.div>
-          ))}
+      <div className="relative w-full max-w-4xl mx-auto p-6">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-8">
+            {projects.map(({ title, cardDescription, image, cardLink }, idx) => (
+              <motion.div
+                key={idx}
+                className="group embla__slide flex-[0_0_280px] md:flex-[0_0_340px] lg:flex-[0_0_360px] bg-gray-800/40 rounded-lg overflow-hidden border border-gray-700"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+              >
+                <a href={cardLink ?? "#"} className="block w-full">
+                  {image && (
+                    <Image
+                      src={image}
+                      alt={title}
+                      width={800}
+                      height={450}
+                      className="object-cover w-full h-48 sm:h-56 transition-transform duration-700 ease-out group-hover:scale-105"
+                      unoptimized
+                    />
+                  )}
+                  <div className="p-4 text-left space-y-2 bg-white text-gray-900">
+                    <motion.div
+                      whileHover={{ x: 4 }}
+                      transition={{ type: "spring", stiffness: 100 }}
+                    >
+                      <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 min-h-20">
+                        {cardDescription}
+                      </p>
+                    </motion.div>
+                  </div>
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }} // Delay slightly to match with first cards
+        >
+          <PrevButton enabled={true} onClick={scrollPrev} />
+          <NextButton enabled={true} onClick={scrollNext} />
+        </motion.div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.2 }} // Delay slightly to match with first cards
-      >
-        <PrevButton enabled={true} onClick={scrollPrev} />
-        <NextButton enabled={true} onClick={scrollNext} />
-      </motion.div>
-    </div>
     {/* Pagination */}
     {emblaApi && (
       <div className="mt-4 flex justify-center gap-2">
       {projects.map((_, index) => (
         <button
           key={index}
-          onClick={() => emblaApi.scrollTo(index)}
-          className={`w-2 h-2 rounded-full ${
-            selectedIndex === index ? "bg-orange-500" : "bg-gray-500/40"
-          } transition-all`}
-        />
-      ))}
-      </div>
-    )}
+            onClick={() => emblaApi.scrollTo(index)}
+            className={`w-2 h-2 rounded-full ${
+              selectedIndex === index ? "bg-orange-500" : "bg-gray-500/40"
+            } transition-all`}
+          />
+        ))}
+        </div>
+      )}
     </>
   );
 };
