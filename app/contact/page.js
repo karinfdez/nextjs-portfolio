@@ -47,7 +47,7 @@ const handleCopy = () => {
   };
 
   return (
-    <main className="min-h-screen text-white flex flex-col items-center justify-center px-4">
+    <main className="h-screen text-white flex flex-col items-center justify-center px-4 overflow-hidden">
       <AnimatedSlideDown delay={0.2} className="text-4xl md:text-5xl font-bold mb-4">
         Get in Touch
       </AnimatedSlideDown>
