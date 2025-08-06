@@ -60,10 +60,17 @@ const ProjectsCarousel = ({ projects = [] }) => {
                   />
                 )}
                 <div className="p-4 text-left space-y-2 bg-white text-gray-900">
+                <motion.h3
+                  whileHover={{ x: 4 }}
+                  transition={{ type: "spring", stiffness: 100 }}
+                  className="font-semibold text-lg"
+                >
                   <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 min-h-20">
                     {cardDescription}
                   </p>
+                </motion.h3>
+                
                 </div>
               </a>
             </motion.div>
