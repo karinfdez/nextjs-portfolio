@@ -10,7 +10,7 @@ const links = [
 ];
 
 const Navigation = () => (
-  <nav className="space-x-6">
+  <nav className="space-x-6 hidden md:block">
     {links.map(({ href, label, mobileOnly }) => (
       <span key={href} className={mobileOnly ? "md:hidden" : ""}>
         <NavLink href={href}>{label}</NavLink>
