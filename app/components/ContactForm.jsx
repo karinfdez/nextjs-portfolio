@@ -7,10 +7,10 @@ export default function ContactForm() {
     
     if (state.succeeded) {
       return (
-        <div className="w-full max-w-md bg-orange-500/20 p-6 rounded-xl shadow-md text-center my-6">
+        <div className="bg-orange-500/10 backdrop-blur-md border border-orange-500/30 shadow-lg shadow-orange-500/10 p-6 rounded-xl text-center my-6">
           <div className="text-green-400 text-4xl mb-4">✓</div>
-          <h3 className="text-xl font-semibold mb-2 text-black">Message Sent!</h3>
-          <p className="text-black">Thanks for reaching out. I'll get back to you soon!</p>
+          <h3 className="text-xl font-semibold mb-2 text-orange-400">Message Sent!</h3>
+          <p className="text-gray-300">Thanks for reaching out. I'll get back to you soon!</p>
         </div>
       );
     }
@@ -27,7 +27,7 @@ export default function ContactForm() {
             name="name"
             placeholder="Your Name"
             required
-            className="w-full p-3 rounded bg-white/30 text-white placeholder-white/70 border border-orange-300 focus:outline-none focus:border-orange-500 backdrop-blur-sm shadow-sm transitionn"
+            className="w-full p-3 rounded bg-white/90 text-black placeholder-black/50 border border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 backdrop-blur-sm shadow-md transition"
           />
         </div>
         
@@ -38,7 +38,7 @@ export default function ContactForm() {
             name="email"
             placeholder="Your Email"
             required
-            className="w-full p-3 rounded bg-white/30 text-white placeholder-white/70 border border-orange-300 focus:outline-none focus:border-orange-500 backdrop-blur-sm shadow-sm transition"
+            className="w-full p-3 rounded bg-white/90 text-black placeholder-black/50 border border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 backdrop-blur-sm shadow-md transition"
           />
           <ValidationError 
             prefix="Email" 
@@ -55,7 +55,7 @@ export default function ContactForm() {
             placeholder="Your Message"
             required
             rows={5}
-            className="w-full p-3 rounded bg-white/30 text-white placeholder-white/70 border border-orange-300 focus:outline-none focus:border-orange-500 backdrop-blur-sm shadow-sm transition"
+            className="w-full p-3 rounded bg-white/90 text-black placeholder-black/50 border border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/30 backdrop-blur-sm shadow-md transition"
           />
           <ValidationError 
             prefix="Message" 

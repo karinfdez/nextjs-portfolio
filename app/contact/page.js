@@ -52,7 +52,7 @@ const handleCopy = () => {
         Get in Touch
       </AnimatedSlideDown>
 
-      <AnimatedSlideDown delay={0.3} className="text-gray-400 mb-6 text-center max-w-md">
+      <AnimatedSlideDown delay={0.3} className="text-gray-300 mb-6 text-center max-w-md">
         I'm always open to new ideas, opportunities, or a good tech chat.
         Drop me a message or connect with me below.
       </AnimatedSlideDown>
