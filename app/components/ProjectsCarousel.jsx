@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
 
@@ -46,7 +46,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
             >
               <a href={cardLink ?? "#"} className="block w-full">
                 {image && (
@@ -55,22 +55,20 @@ const ProjectsCarousel = ({ projects = [] }) => {
                     alt={title}
                     width={800}
                     height={450}
-                    className="object-cover w-full h-48 sm:h-56 transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover w-full h-48 sm:h-56 transition-transform duration-700 ease-out group-hover:scale-105"
                     unoptimized
                   />
                 )}
                 <div className="p-4 text-left space-y-2 bg-white text-gray-900">
-                <motion.h3
-                  whileHover={{ x: 4 }}
-                  transition={{ type: "spring", stiffness: 100 }}
-                  className="font-semibold text-lg"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 min-h-20">
-                    {cardDescription}
-                  </p>
-                </motion.h3>
-                
+                  <motion.div
+                    whileHover={{ x: 4 }}
+                    transition={{ type: "spring", stiffness: 100 }}
+                  >
+                    <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 min-h-20">
+                      {cardDescription}
+                    </p>
+                  </motion.div>
                 </div>
               </a>
             </motion.div>
