@@ -63,29 +63,28 @@ const ProjectsCarousel = ({ projects = [] }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
               >
-                <a href={cardLink ?? "#"} className="block w-full">
+                <a href={cardLink ?? "#"} className="block w-full h-full group relative overflow-hidden">
+                  {/* Image */}
                   {image && (
                     <Image
                       src={image}
                       alt={title}
                       width={800}
                       height={450}
-                      className="object-cover w-full h-48 sm:h-56 transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="object-cover w-full h-96 transition-transform duration-700 ease-out group-hover:scale-105"
                       unoptimized
                     />
                   )}
-                  <div className="p-4 text-left space-y-2 bg-white text-gray-900">
-                    <motion.div
-                      whileHover={{ x: 4 }}
-                      transition={{ type: "spring", stiffness: 100 }}
-                    >
-                      <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 min-h-20">
-                        {cardDescription}
-                      </p>
-                    </motion.div>
+
+                {/* Sliding content (title + description) */}
+                  <div className="absolute bottom-0 left-0 w-full bg-white text-gray-900 transition-all duration-500 transform group-hover:-translate-y-32 px-4 pt-3 pb-4">
+                    <h3 className="text-lg font-semibold">{title}</h3>
+                    <p className="text-sm text-gray-600 mt-2">
+                      {cardDescription}
+                    </p>
                   </div>
                 </a>
+
               </motion.div>
             ))}
           </div>
