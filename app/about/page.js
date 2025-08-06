@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center justify-center lg:justify-start h-screen px-4 pt-0 lg:pt-32 translate-y-6 lg:translate-y-0">
+    <main className="flex flex-col items-center justify-center lg:justify-start h-screen px-4 pt-40 md:pt-0 lg:pt-32">
       <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Avatar */}
         <AnimatedReveal delay={0.1} className="hidden md:block">
