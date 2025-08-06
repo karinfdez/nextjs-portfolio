@@ -6,6 +6,7 @@ const Button = ({
   label,
   href,
   target,
+  type,
   rel,
   onClick,
   borderColor = "border-white",
@@ -16,7 +17,7 @@ const Button = ({
   const Component = href ? motion.a : motion.button;
   const extraProps = href
     ? { href, target, rel }
-    : { type: "button", onClick };
+    : { type: type ? type : "button", onClick };
 
   return (
     <Component

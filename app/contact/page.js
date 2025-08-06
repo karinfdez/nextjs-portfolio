@@ -33,6 +33,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SocialIcons from "../components/Socialicons";
 import ContactForm from "../components/ContactForm";
+import AnimatedSlideUp from "../components/AnimatedSlideDown";
+import AnimatedSlideDown from "../components/AnimatedSlideDown";
 
 export default function ContactPage() {
 const [copied, setCopied] = useState(false);
@@ -46,31 +48,25 @@ const handleCopy = () => {
 
   return (
     <main className="min-h-screen text-white flex flex-col items-center justify-center px-4">
-      <motion.h1
-        className="text-4xl md:text-5xl font-bold mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <AnimatedSlideDown delay={0.2} className="text-4xl md:text-5xl font-bold mb-4">
         Get in Touch
-      </motion.h1>
+      </AnimatedSlideDown>
 
-      <p className="text-gray-400 mb-6 text-center max-w-md">
+      <AnimatedSlideDown delay={0.3} className="text-gray-400 mb-6 text-center max-w-md">
         I'm always open to new ideas, opportunities, or a good tech chat.
         Drop me a message or connect with me below.
-      </p>
+      </AnimatedSlideDown>
 
-      <ContactForm />
+    
 
       {/* Replace this with your own animated SocialIcons component */}
-      <motion.div
-        className="mb-10"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
+      <AnimatedSlideUp delay={0.4} className="mb-10 w-full max-w-lg">
+        <ContactForm />
+      </AnimatedSlideUp>
+
+      <AnimatedSlideUp delay={0.5} className="mb-10">
         <SocialIcons onEmailClick={handleCopy} />
-      </motion.div>
+      </AnimatedSlideUp>
 
       {copied && <p className="text-green-400 mb-6">Email copied to clipboard!</p>}
 
