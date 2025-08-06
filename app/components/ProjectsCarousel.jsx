@@ -71,21 +71,20 @@ const ProjectsCarousel = ({ projects = [] }) => {
                       alt={title}
                       width={800}
                       height={450}
-                      className="object-cover w-full h-96 transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="object-cover w-full h-72 md:h-80 lg:h-96 transition-transform duration-700 ease-out group-hover:scale-105"
                       unoptimized
                     />
                   )}
 
                 {/* Sliding content (title + description) */}
-                  <div className="absolute bottom-0 left-0 w-full bg-white text-gray-900 transition-all duration-500 transform group-hover:-translate-y-32 px-4 pt-3 pb-4">
-                    <h3 className="text-lg font-semibold">{title}</h3>
-                    <p className="text-sm text-gray-600 mt-2">
-                      {cardDescription}
-                    </p>
-                  </div>
-                </a>
-
-              </motion.div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#f8f8f8] text-gray-800 transition-all duration-500 transform 
+                  md:group-hover:-translate-y-32 md:translate-y-0 
+                  px-4 pt-3 pb-4 min-h-[125px]">
+                  <h3 className="text-lg font-semibold">{title}</h3>
+                  <p className="text-sm text-gray-600 mt-2">{cardDescription}</p>
+                </div>
+              </a>
+            </motion.div>
             ))}
           </div>
         </div>
