@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
 
 const PrevButton = ({ enabled, onClick }) => (
   <button
-    className="embla__prev absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-gray-800/60 hover:bg-gray-800 text-white disabled:opacity-40"
+    className="embla__prev absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-orange-500 hover:bg-orange-500 text-white disabled:opacity-40"
     onClick={onClick}
     disabled={!enabled}
     aria-label="Previous slide"
@@ -17,7 +17,7 @@ const PrevButton = ({ enabled, onClick }) => (
 
 const NextButton = ({ enabled, onClick }) => (
   <button
-    className="embla__next absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-gray-800/60 hover:bg-gray-800 text-white disabled:opacity-40"
+    className="embla__next absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-orange-500 hover:bg-orange-500 text-white disabled:opacity-40"
     onClick={onClick}
     disabled={!enabled}
     aria-label="Next slide"
@@ -34,9 +34,35 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
   if (video) mediaItems.push({ type: "video", src: video });
   screenshots.forEach((src) => mediaItems.push({ type: "image", src }));
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", slidesToScroll: 1 });
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "center", slidesToScroll: 1 });
+  
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  
+  // Update button states
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setPrevBtnEnabled(emblaApi.canScrollPrev());
+    setNextBtnEnabled(emblaApi.canScrollNext());
+  }, [emblaApi]);
+  
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    // Subscribe to Embla's select event to update states
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    
+    // Initialize button states
+    onSelect();
+    
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   // helper to convert YouTube watch url to embed url
   const getYoutubeEmbed = (url) => {
@@ -79,8 +105,8 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
       </div>
       {mediaItems.length > 1 && (
         <>
-          <PrevButton enabled={true} onClick={scrollPrev} />
-          <NextButton enabled={true} onClick={scrollNext} />
+          <PrevButton enabled={prevBtnEnabled} onClick={scrollPrev} />
+          <NextButton enabled={nextBtnEnabled} onClick={scrollNext} />
         </>
       )}
     </div>
