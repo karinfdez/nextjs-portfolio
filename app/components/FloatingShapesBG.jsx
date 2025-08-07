@@ -59,11 +59,11 @@ const FloatingShapes = () => {
         transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
       >
         {/* Main hexagon */}
-        <svg width="160" height="160" viewBox="0 0 160 160" className="opacity-15">
+        <svg width="160" height="160" viewBox="0 0 160 160" className="opacity-30">
           <path
             d="M80 10 L140 45 L140 115 L80 150 L20 115 L20 45 Z"
             fill="none"
-            className="stroke-[2] stroke-orange-500/80"
+            className="stroke-[2] stroke-orange-500/70"
           />
         </svg>
       </motion.div>
@@ -71,10 +71,10 @@ const FloatingShapes = () => {
       {/* Secondary hexagon (smaller + offset) */}
       <motion.div
         className="absolute bottom-[85px] lg:bottom-[130px] left-[95px] 3xl:left-[165px]"
-        animate={{ y: [0, -6, 0], rotate: [0, 8, 0] }}
+        animate={{ y: [0, -6, 0], rotate: [0, 12, 0] }}
         transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
       >
-        <svg width="120" height="120" viewBox="0 0 160 160" className="opacity-20">
+        <svg width="120" height="120" viewBox="0 0 160 160" className="opacity-15">
           <path
             d="M80 20 L132 50 L132 110 L80 140 L28 110 L28 50 Z"
             fill="none"
