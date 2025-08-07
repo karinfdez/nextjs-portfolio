@@ -22,7 +22,7 @@ const FloatingShapes = () => {
         animate="animate"
       >
         <svg width="220" height="220" viewBox="0 0 220 220" className="opacity-20">
-          <circle cx="110" cy="110" r="80" fill="none" className="stroke-[3] stroke-orange-500/60" />
+          <circle cx="110" cy="110" r="80" fill="none" className="stroke-[2.5] stroke-orange-500/90" />
           <circle cx="110" cy="110" r="105" fill="none" className="stroke-[1.5] stroke-orange-500/50" />
         </svg>
       </motion.div>
