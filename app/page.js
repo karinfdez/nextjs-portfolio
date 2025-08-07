@@ -1,11 +1,10 @@
 "use client";
 import FlipImage from "./components/FlipImage";
 import Button from "./components/Button";
-// Add more images here as you drop them into flip-images folder
-const gallery = ["/images/flip-images/tulips.png"];
-const sequence = ["/images/flip-images/tulips.png"];
 import { useRouter } from "next/navigation";
 import AnimatedReveal from "./components/AnimatedReveal";
+const gallery = ["/images/flip-images/tulips.png"];
+const sequence = ["/images/flip-images/tulips.png"];
 
 export default function Home() {
   const router = useRouter();

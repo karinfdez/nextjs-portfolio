@@ -70,15 +70,15 @@
 }
 
 .animated-bg {
-  background: linear-gradient(-45deg, #0b1120, #121e36, #0b1120, #1c1f2b);
+  background: #0b1120;
   background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
+  /* animation: gradientShift 10s ease infinite; */
 }
-@keyframes gradientShift {
+/* @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
+} */
 
 
 
