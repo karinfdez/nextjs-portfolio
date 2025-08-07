@@ -5,6 +5,7 @@ import AnimatedDots from "./components/AnimatedDots";
 import Navigation from "./components/Navigation";
 import AnimatedReveal from "./components/AnimatedReveal";
 import HamburgerMenu from "./components/HamburgerMenu";
+import MouseGlow from "./components/MouseGlow";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -29,7 +30,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${fraunces.className} min-h-full antialiased flex flex-col`}>
-        <header className="w-full flex justify-between md:justify-end py-8 px-4 md:pr-12 text-xl lg:text-2xl max-w-6xl mx-auto relative sticky top-0 z-50 bg-gray-900/90 backdrop-blur">
+        <MouseGlow />
+        <header className="w-full flex justify-between md:justify-end py-8 px-4 md:pr-12 text-xl lg:text-2xl max-w-6xl mx-auto relative sticky top-0 z-40 bg-gray-900/90 backdrop-blur">
           <AnimatedDots className="absolute left-4 md:left-6 top-0 scale-90" animateOnHover={true} colorClass="bg-orange-500" isClickable={true} />
           <div className="block md:hidden">
             <HamburgerMenu />
@@ -42,6 +44,7 @@ export default function RootLayout({ children }) {
         </header>
         {children}
       </body>
+      
     </html>
   );
 }
