@@ -71,5 +71,6 @@ const handleCopy = () => {
       {copied && <p className="text-green-400 mb-6">Email copied to clipboard!</p>}
 
     </main>
+
   )
 } 
