@@ -4,9 +4,19 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useState, useEffect } from "react";
 
+const navBtn =
+  "absolute top-1/2 -translate-y-1/2 z-10 p-3 rounded-full \
+   border border-orange-500/50 text-orange-400 \
+   bg-[#0b1120]/60 backdrop-blur-sm \
+   shadow-[0_2px_10px_rgba(0,0,0,.35)] \
+   transition-colors duration-300 \
+   hover:bg-orange-500 hover:text-white hover:border-orange-500 \
+   focus:outline-none focus:ring-2 focus:ring-orange-500/40 \
+   disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-orange-400";
+
 const PrevButton = ({ enabled, onClick }) => (
   <button
-    className="embla__prev absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-orange-500 hover:bg-orange-500 text-white disabled:opacity-40"
+    className={`${navBtn} left-2`}
     onClick={onClick}
     disabled={!enabled}
     aria-label="Previous slide"
@@ -17,7 +27,7 @@ const PrevButton = ({ enabled, onClick }) => (
 
 const NextButton = ({ enabled, onClick }) => (
   <button
-    className="embla__next absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-orange-500 hover:bg-orange-500 text-white disabled:opacity-40"
+    className={`${navBtn} right-2`}
     onClick={onClick}
     disabled={!enabled}
     aria-label="Next slide"
