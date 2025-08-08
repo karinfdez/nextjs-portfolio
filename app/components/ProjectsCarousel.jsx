@@ -5,9 +5,19 @@ import { useCallback, useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
 
+const navBtn =
+  "absolute top-1/2 -translate-y-1/2 z-10 p-3 rounded-full \
+   border border-orange-500/50 text-orange-400 \
+   bg-[#0b1120]/60 backdrop-blur-sm \
+   shadow-[0_2px_10px_rgba(0,0,0,.35)] \
+   transition-colors duration-300 \
+   hover:bg-orange-500 hover:text-white hover:border-orange-500 \
+   focus:outline-none focus:ring-2 focus:ring-orange-500/40 \
+   disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-orange-400";
+
 const PrevButton = ({ enabled, onClick }) => (
   <button
-    className="embla__prev absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-orange-500 hover:bg-orange-500 text-white disabled:opacity-40"
+    className={`${navBtn} left-2`}
     onClick={onClick}
     disabled={!enabled}
     aria-label="Previous slide"
@@ -18,7 +28,7 @@ const PrevButton = ({ enabled, onClick }) => (
 
 const NextButton = ({ enabled, onClick }) => (
   <button
-    className="embla__next absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-orange-500 hover:bg-orange-500 text-white disabled:opacity-40"
+    className={`${navBtn} right-2`}
     onClick={onClick}
     disabled={!enabled}
     aria-label="Next slide"
@@ -75,27 +85,43 @@ const ProjectsCarousel = ({ projects = [] }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
               >
-                <a href={cardLink ?? "#"} className="block w-full h-full group relative overflow-hidden">
-                  {/* Image */}
-                  {image && (
-                    <Image
-                      src={image}
-                      alt={title}
-                      width={800}
-                      height={450}
-                      className="object-cover w-full h-72 md:h-80 lg:h-96 transition-transform duration-700 ease-out group-hover:scale-105"
-                      unoptimized
-                    />
-                  )}
+              <a
+  href={cardLink ?? "#"}
+  className="block w-full h-full group relative overflow-hidden rounded-lg"
+>
+      {image && (
+        <>
+          <Image
+            src={image}
+            alt={title}
+            width={800}
+            height={450}
+            className="object-cover w-full h-72 md:h-80 lg:h-96 transition-transform duration-700 ease-out group-hover:scale-105"
+            unoptimized
+          />
 
-                {/* Sliding content (title + description) */}
-                <div className="absolute bottom-0 left-0 w-full bg-[#f8f8f8] text-gray-800 transition-all duration-500 transform 
-                  md:group-hover:-translate-y-32 md:translate-y-0 
-                  px-4 pt-3 pb-4 min-h-[125px]">
-                  <h3 className="text-lg font-semibold">{title}</h3>
-                  <p className="text-sm text-gray-600 mt-2">{cardDescription}</p>
-                </div>
-              </a>
+          {/* Rust/brown tint overlay */}
+          {/* <div className="absolute inset-0 bg-[#8b5a2b]/20 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0"></div> */}
+
+          {/* Top shadow fade */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-0"></div>
+
+          {/* Bottom shadow fade (helps text area blend) */}
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#0b1120]/50 to-transparent pointer-events-none"></div> */}
+        </>
+      )}
+
+          {/* Sliding content (title + description) */}
+          <div
+            className="absolute bottom-0 left-0 w-full bg-white/70 dark:bg-[#0b1120]/80 backdrop-blur-sm text-gray-900 dark:text-gray-200
+              transition-all duration-500 transform md:group-hover:-translate-y-32 md:translate-y-0 
+              px-4 pt-3 pb-4 min-h-[125px] border-t border-white/20 dark:border-gray-700/40"
+          >
+            <h3 className="text-lg font-semibold">{title}</h3>
+            <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">{cardDescription}</p>
+          </div>
+        </a>
+
             </motion.div>
             ))}
           </div>
