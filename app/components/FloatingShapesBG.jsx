@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const FloatingShapes = () => {
   const float = {
     animate: {
-      y: [0, -10, 0],
-      rotate: [0, 6, 0],
+      y: [0, -15, 0],
+      rotate: [0, 8, 0],
       transition: { duration: 10, repeat: Infinity, ease: 'easeInOut' }
     }
   };
