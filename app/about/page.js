@@ -5,6 +5,7 @@ import AnimatedParagraph from "../components/AnimatedParagraph";
 import AnimatedTag from "../components/AnimatedTag";
 import AnimatedReveal from "../components/AnimatedReveal";
 import { motion } from "framer-motion";
+import ProfilePicture from "../components/ProfilePicture";
 
 export default function AboutPage() {
   return (
@@ -19,16 +20,7 @@ export default function AboutPage() {
           transition={{ type: "spring", stiffness: 200, damping: 10 }}
           className="overflow-hidden rounded-xl border-1 border-orange-500"
         >
-          <div className="flex-shrink-0 mx-auto md:mx-0">
-          <Image
-            src="/images/flip-images/karin-full.png"
-            alt="Karin profile photo"
-            width={260}
-            height={260}
-            priority
-            className="rounded-2xl object-cover border-4 border-orange-500"
-          />
-          </div>
+          <ProfilePicture  w={600} h={600}/>
         </motion.div>
       
         </AnimatedReveal>
