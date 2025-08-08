@@ -85,7 +85,7 @@ const FloatingShapes = () => {
 
       {/* Soft blurred blob (top-right accent) */}
       <motion.div
-        className="absolute -top-24 right-[-60px] w-[380px] h-[380px] rounded-full bg-orange-500/10 blur-[120px]"
+        className="absolute -top-24 right-0 w-[300px] h-[300px] rounded-full bg-orange-500/10 blur-[120px]"
         animate={{ y: [-10, 10, -10] }}
         transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
       />
