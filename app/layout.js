@@ -5,7 +5,6 @@ import AnimatedDots from "./components/AnimatedDots";
 import Navigation from "./components/Navigation";
 import AnimatedReveal from "./components/AnimatedReveal";
 import HamburgerMenu from "./components/HamburgerMenu";
-import MouseGlow from "./components/MouseGlow";
 import FloatingShapesBG from "./components/FloatingShapesBG";
 
 const fraunces = Fraunces({
@@ -32,7 +31,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${fraunces.className} animated-bg min-h-full antialiased flex flex-col overflow-x-hidden`}>
         <FloatingShapesBG />
-        {/* <MouseGlow /> */}
           <header className="w-full flex justify-between md:justify-end py-8 px-4 md:pr-12 text-xl lg:text-2xl max-w-6xl mx-auto relative sticky top-0 z-40 bg-transparent md:backdrop-blur">
             <AnimatedDots className="absolute left-4 md:left-6 top-0 scale-90" animateOnHover={true} colorClass="bg-orange-500" isClickable={true} />
             <div className="block md:hidden">
