@@ -2,7 +2,7 @@ export const projects = [
     {
       title: "Class Action",
       slug: "class-action",
-      cardDescription: "A dashboard to identify and manage potential class action members.",
+      cardDescription: "A dashboard to identify and manage potential class action members built with Next.js and Supabase.",
       project_description_1: `Class Action is a multi-tenant web platform designed to identify, contact, and recruit potential clients for employment class action lawsuits. The system enables law firms to search and fetch profiles of individuals based on their past job experience with a specific company, order and filter these profiles by relevant class action periods, and reach out to them directly via email.`,
       project_description_2: `This platform connects individuals affected by workplace violations with law firms handling relevant class action litigation, streamlining the process of finding and engaging qualified participants.`,
       image: "/images/projects-images/class-action.png",
