@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${fraunces.className} animated-bg min-h-full antialiased flex flex-col overflow-x-hidden`}>
         <FloatingShapesBG />
-          <header className="w-full flex justify-between md:justify-end py-8 px-4 md:px-12 text-xl lg:text-2xl max-w-6xl mx-auto relative sticky top-0 z-40 bg-transparent md:backdrop-blur">
+          <header className="w-full flex justify-between md:justify-end py-3 px-4 md:py-7 md:px-12 text-xl lg:text-2xl max-w-6xl mx-auto relative sticky top-0 z-40 bg-transparent backdrop-blur">
             <AnimatedDots className="absolute left-4 md:left-6 top-0 scale-90" animateOnHover={true} colorClass="bg-orange-500" isClickable={true} />
             <div className="block md:hidden">
               <HamburgerMenu />
