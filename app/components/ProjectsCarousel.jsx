@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
@@ -85,9 +86,10 @@ const ProjectsCarousel = ({ projects = [] }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
               >
-              <a
+              <Link
   href={cardLink ?? "#"}
   className="block w-full h-full group relative overflow-hidden rounded-lg"
+  scroll={false}
 >
       {image && (
         <>
@@ -120,7 +122,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
             <h3 className="text-lg font-semibold">{title}</h3>
             <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">{cardDescription}</p>
           </div>
-        </a>
+        </Link>
 
             </motion.div>
             ))}

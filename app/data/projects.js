@@ -33,6 +33,22 @@ export const projects = [
       technologies: ["Next.js", "Cloudflare AI Agents", "Tailwind CSS", "Resend", "OpenAI API", "Supabase"],
     },
     {
+      title: "Next.js Portfolio",
+      slug: "nextjs-portfolio",
+      cardDescription: "A modern, responsive portfolio website built with Next.js, Tailwind CSS, and Framer Motion animations.",
+      project_description_1: `This portfolio website showcases my web development projects with a modern design and smooth animations. 
+        The site features a responsive layout that adapts perfectly to any device, with interactive elements that enhance the user experience.`,
+      project_description_2: `The architecture includes custom components like animated reveals, interactive project carousels, and dynamic project detail pages. 
+        Framer Motion powers the smooth transitions and animations throughout the site, while Tailwind CSS provides a utility-first approach to styling. 
+        The portfolio is deployed on Vercel for reliable hosting and seamless updates through continuous deployment.`,
+      image: "/images/projects-images/my-portfolio.png",
+      cardLink: "/projects/nextjs-portfolio",
+      githubLink: "https://github.com/karinfdez/nextjs-portfolio",
+      video: "",
+      screenshots: ["/images/screenshots/portfolio/portfolio-1.png", "/images/screenshots/portfolio/portfolio-2.png", "/images/screenshots/portfolio/portfolio-3.png"],
+      technologies: ["Next.js 14", "Tailwind CSS", "Framer Motion", "Responsive Design", "Vercel"],
+    },
+    {
       title: "Chatbot",
       slug: "chatbot",
       cardDescription: "An AI-powered assistant built with Langchain JS that answers questions using internal company data.",
