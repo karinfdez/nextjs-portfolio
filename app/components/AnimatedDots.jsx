@@ -13,7 +13,7 @@ const AnimatedDots = ({
   const columns = [4, 8]; // second column is the longest
   const router = useRouter();
 
-  // tune these if you change sizes/spacings
+
   const DOT_PX = 8;        // w-2 h-2
   const GAP_PX = 16;       // space-y-4 = 1rem = 16px
   const longest = Math.max(...columns);
