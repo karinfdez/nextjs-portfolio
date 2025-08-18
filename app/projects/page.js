@@ -6,7 +6,7 @@ import { projects } from "../data/projects";
 
 export default function ProjectsPage() {
   return (
-    <main className="flex flex-col items-center justify-center flex-1 overflow-hidden px-4 space-y-8">
+    <main className="w-full max-w-6xl mx-auto px-4 md:px-12 flex flex-col items-center justify-center flex-1 overflow-hidden space-y-8">
       <AnimatedReveal delay={0.1}>
         <h1 className="w-full text-center text-4xl md:text-6xl font-bold mb-4">Projects</h1>
         

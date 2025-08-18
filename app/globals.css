@@ -99,3 +99,8 @@ body {
 body {
   @apply bg-gray-900 text-gray-100;
 }
+
+/* Stabilize the scrollbar (prevents the subtle nudge) */
+html {
+  scrollbar-gutter: stable both-edges;
+}
