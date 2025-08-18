@@ -102,14 +102,8 @@ const ProjectsCarousel = ({ projects = [] }) => {
             unoptimized
           />
 
-          {/* Rust/brown tint overlay */}
-          {/* <div className="absolute inset-0 bg-[#8b5a2b]/20 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0"></div> */}
-
           {/* Top shadow fade */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-0"></div>
-
-          {/* Bottom shadow fade (helps text area blend) */}
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#0b1120]/50 to-transparent pointer-events-none"></div> */}
         </>
       )}
 

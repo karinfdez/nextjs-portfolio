@@ -45,7 +45,7 @@ export const projects = [
       cardLink: "/projects/nextjs-portfolio",
       githubLink: "https://github.com/karinfdez/nextjs-portfolio",
       video: "",
-      screenshots: ["/images/screenshots/portfolio/portfolio-1.png", "/images/screenshots/portfolio/portfolio-2.png", "/images/screenshots/portfolio/portfolio-3.png"],
+      screenshots: ["/images/screenshots/my-portfolio/my-portfolio-1.png"],
       technologies: ["Next.js 14", "Tailwind CSS", "Framer Motion", "Responsive Design", "Vercel"],
     },
     {

@@ -63,7 +63,7 @@ export default function FlipImage({ src, backImages = [], autoSequence = [], siz
 
           setFlipped((prev) => {
             if (prev) {
-              // Was showing back; flip back to front (karin)
+              // Was showing back; flip back to front
               return false;
             }
             // Was showing front; set next back image and flip
