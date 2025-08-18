@@ -2,6 +2,10 @@
 
 A modern, responsive portfolio website built with Next.js, Tailwind CSS, and Framer Motion.
 
+## Demo
+
+Check out the live demo: [Next.js Portfolio](https://portfolio.karinfdez.com/projects/nextjs-portfolio)
+
 ## Features
 
 - Built with Next.js 14
