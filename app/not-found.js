@@ -29,6 +29,7 @@ export default function NotFound() {
             </h1>
             </div>
         </AnimatedReveal>
+        {/* Added comment to trigger deploy */}
       <AnimatedReveal delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-semibold mb-6 text-center">Page Not Found</h2>
         
