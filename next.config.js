@@ -5,6 +5,16 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
   },
+  // Redirect from homepage to about page
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/about',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
