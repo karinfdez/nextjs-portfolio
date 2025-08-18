@@ -46,7 +46,7 @@ export const projects = [
       githubLink: "https://github.com/karinfdez/nextjs-portfolio",
       video: "",
       screenshots: ["/images/screenshots/my-portfolio/my-portfolio-1.png"],
-      technologies: ["Next.js 14", "Tailwind CSS", "Framer Motion", "Responsive Design", "Vercel"],
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Design", "Vercel"],
     },
     {
       title: "Chatbot",
