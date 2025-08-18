@@ -18,7 +18,7 @@ const FloatingShapesBG = () => {
       <div className="relative h-full max-w-[1700px] mx-auto">
         {/* Orange soft ring (top-left) */}
         <motion.div
-          className="absolute top-10 md:top-52 lg:top-52 left-4 xl:left-12"
+          className="absolute top-20 md:top-52 lg:top-52 left-4 xl:left-12"
           variants={float}
           animate="animate"
         >
