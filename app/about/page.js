@@ -67,7 +67,10 @@ export default function AboutPage() {
         </AnimatedReveal>
 
           <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
-          {`Hey, I’m Karin, a full-stack Software Engineer with 8+ years of experience building fast, scalable, and user-focused web applications. I’ve worked with technologies like Next.js, React, Supabase, Cloudflare Workers, Hygraph, MongoDB, and AWS Lambda to deliver high-performance platforms for marketplaces, CMS integrations, and real-time applications. My recent work includes building APIs that handle millions of requests, connecting Cloudflare Workers to external databases like MongoDB, and designing clean, serverless architectures optimized for speed and reliability.`}
+          {`Hey, I’m Karin, a full-stack Software Engineer with 8+ years of experience building fast, scalable, and user-focused web applications.`}
+          </AnimatedParagraph>
+          <AnimatedParagraph>
+            {`Lately, I’ve been exploring the intersection of AI and automation, prototyping tools that combine retrieval-augmented generation (RAG), human-in-the-loop workflows, and serverless infrastructure. I’m excited about how these technologies can make digital work more transparent, reliable, and autonomous.`}
           </AnimatedParagraph>
 
           {/* Tags */}
@@ -78,7 +81,6 @@ export default function AboutPage() {
               "Tailwind CSS",
               "OpenAI API",
               "Cloudflare AI Agents",
-              "LangChain",
               "Supabase"
             ].map((tag, idx) => (
               <AnimatedTag
@@ -97,9 +99,8 @@ export default function AboutPage() {
 
       {/* long paragraph */}
       <div className="max-w-4xl mt-12 text-lg leading-relaxed text-gray-300 text-left space-y-6 pb-8 xl:pb-0">
-        <AnimatedParagraph className="text-lg leading-relaxed text-gray-300">
-          {`Lately, I’ve been diving into AI-powered features and Cloudflare AI Agents, building tools that automate outreach and analyze data.`}
-        </AnimatedParagraph>
+        {/* <AnimatedParagraph className="text-lg leading-relaxed text-gray-300">
+        </AnimatedParagraph> */}
         <AnimatedParagraph delay={0.2}>
         {`Beyond code, I’m passionate about reading, trading, and dancing. Always curious, always learning.`}
         </AnimatedParagraph>
