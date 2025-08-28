@@ -7,6 +7,7 @@ import AnimatedReveal from "./components/AnimatedReveal";
 import HamburgerMenu from "./components/HamburgerMenu";
 import FloatingShapesBG from "./components/FloatingShapesBG";
 
+// Add comment to trigger deploy
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
