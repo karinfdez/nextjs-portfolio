@@ -3,7 +3,7 @@ export const projects = [
       title: "Class Action",
       slug: "class-action",
       cardDescription: "A dashboard to identify and manage potential class action members built with Next.js and Supabase.",
-      project_description_1: `Class Action is a multi-tenant web platform designed to identify, contact, and recruit potential clients for employment class action lawsuits. The system enables law firms to search and fetch profiles of individuals based on their past job experience with a specific company, order and filter these profiles by relevant class action periods, and reach out to them directly via email.`,
+      project_description_1: `Class Action is a multi-tenant web platform with a secure login system, designed to identify, contact, and recruit potential clients for employment class action lawsuits. The system enables law firms to search and fetch profiles of individuals based on their past job experience with a specific company, order and filter these profiles by relevant class action periods, and reach out to them directly via email, or download the results as CSV files for offline review and legal documentation.`,
       project_description_2: `This platform connects individuals affected by workplace violations with law firms handling relevant class action litigation, streamlining the process of finding and engaging qualified participants.`,
       image: "/images/projects-images/class-action.png",
       cardLink: "/projects/class-action",
@@ -16,15 +16,8 @@ export const projects = [
       title: "Email Service",
       slug: "email-service",
       cardDescription: "An AI-powered email assistant built with Cloudflare AI Agents.",
-      project_description_1: `This project is an AI-driven email service built with Cloudflare Workers 
-      and the Cloudflare AI Agents SDK, designed to streamline legal outreach campaigns. 
-      It automatically generates and sends personalized emails using GPT-4, 
-      based on user profile data stored in Supabase. The system is fully serverless, scalable, 
-      and structured around specialized agents—each responsible for fetching data, processing email content, or dispatching messages`,
-      project_description_2: `Behind the scenes, it uses Cloudflare Queues and Durable Objects to batch 
-      and manage parallel workloads efficiently while enforcing rate and token limits. 
-      The architecture is optimized for reliability and speed, allowing legal teams to automate 
-      outreach at scale without compromising personalization.`,
+      project_description_1: `This project is an AI-powered email service built with Cloudflare Workers and the Cloudflare AI Agents SDK, designed to streamline legal outreach campaigns. It automatically generates and sends personalized emails using GPT-4, based on user profile data stored in Supabase. The system is fully serverless, scalable, and structured around specialized agents, each responsible for fetching data, processing email content, or dispatching messages.`,
+      project_description_2: `Behind the scenes, it uses Cloudflare Queues and Durable Objects to batch and manage parallel workloads efficiently while enforcing rate and token limits. The service also tracks key metrics, including number of emails sent, failed deliveries, and tokens consumed, giving legal teams transparency into both performance and cost.`,
       image: "/images/projects-images/email-service.png",
       cardLink: "/projects/email-service",
       githubLink: "https://github.com/karinfdez/email-service-showcase/blob/main/README.md",
@@ -36,11 +29,8 @@ export const projects = [
       title: "Next.js Portfolio",
       slug: "nextjs-portfolio",
       cardDescription: "A modern, responsive portfolio website built with Next.js, Tailwind CSS, and Framer Motion animations.",
-      project_description_1: `This portfolio website showcases my web development projects with a modern design and smooth animations. 
-        The site features a responsive layout that adapts perfectly to any device, with interactive elements that enhance the user experience.`,
-      project_description_2: `The architecture includes custom components like animated reveals, interactive project carousels, and dynamic project detail pages. 
-        Framer Motion powers the smooth transitions and animations throughout the site, while Tailwind CSS provides a utility-first approach to styling. 
-        The portfolio is deployed on Vercel for reliable hosting and seamless updates through continuous deployment.`,
+      project_description_1: `This portfolio website highlights my web development projects through a modern design, smooth animations, and responsive layouts that adapt seamlessly to any device. It emphasizes clarity and interactivity, giving visitors an engaging experience while showcasing both technical and design skills.`,
+      project_description_2: `The site’s architecture includes custom components such as animated reveals, interactive carousels, and dynamic project detail pages. Framer Motion powers the transitions and animations, while Tailwind CSS ensures consistent, scalable styling. Deployed on Vercel, the portfolio benefits from reliable hosting and continuous deployment, enabling quick updates and a smooth developer workflow.`,
       image: "/images/projects-images/my-portfolio.png",
       cardLink: "/projects/nextjs-portfolio",
       githubLink: "https://github.com/karinfdez/nextjs-portfolio",

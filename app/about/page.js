@@ -67,10 +67,10 @@ export default function AboutPage() {
         </AnimatedReveal>
 
           <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
-          {`Hey, I’m Karin, a full-stack Software Engineer with 8+ years of experience building fast, scalable, and user-focused web applications.`}
+          {`I’m Karin, a full-stack Software Engineer with 8+ years of experience building fast, scalable, and user-focused web applications. My background spans both frontend and backend, with a focus on developer productivity, performance, and scalable infrastructure.`}
           </AnimatedParagraph>
-          <AnimatedParagraph>
-            {`Lately, I’ve been exploring the intersection of AI and automation, prototyping tools that combine retrieval-augmented generation (RAG), human-in-the-loop workflows, and serverless infrastructure. I’m excited about how these technologies can make digital work more transparent, reliable, and autonomous.`}
+          <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
+            {`Recently, I’ve been prototyping AI and automation tools, including retrieval-augmented generation (RAG) pipelines, multi-agent systems, and serverless workflows. I’m excited about how these technologies can make engineering processes and digital products more transparent, reliable, and efficient.`}
           </AnimatedParagraph>
 
           {/* Tags */}
