@@ -70,7 +70,7 @@ export default function AboutPage() {
           {`I’m Karin, a full-stack Software Engineer with 8+ years of experience building fast, scalable, and user-focused web applications. My background spans both frontend and backend, with a focus on developer productivity, performance, and scalable infrastructure.`}
           </AnimatedParagraph>
           <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
-            {`Recently, I’ve been prototyping AI and automation tools, including retrieval-augmented generation (RAG) pipelines, multi-agent systems, and serverless workflows. I’m excited about how these technologies can make engineering processes and digital products more transparent, reliable, and efficient.`}
+            {`Recently, I’ve been prototyping AI-powered and automation-driven tools, including multi-agent systems, natural-language database querying with guardrails, and serverless workflows. I’m especially excited about applying these technologies to make internal tools and digital products more transparent, reliable, and efficient.`}
           </AnimatedParagraph>
 
           {/* Tags */}
@@ -81,7 +81,8 @@ export default function AboutPage() {
               "Tailwind CSS",
               "OpenAI API",
               "Cloudflare AI Agents",
-              "Supabase"
+              "Supabase",
+              "Langraph"
             ].map((tag, idx) => (
               <AnimatedTag
                 key={tag}
