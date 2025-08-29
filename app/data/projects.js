@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "SafeQuery AI - COMING SOON",
     slug: "safequery-ai",
-    cardDescription: "An agent built in LangGraph that translates natural language into safe queries and returns results in clear, conversational language.",
+    cardDescription: "An agent built in LangGraph that translates natural language into safe queries and returns results in clear, conversational style.",
     project_description_1: '',
     project_description_2: '',
     image: "/images/projects-images/query.png",
