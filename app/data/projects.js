@@ -1,8 +1,8 @@
 export const projects = [
   {
-    title: "SafeQuery AI - COMING SOON",
-    slug: "safequery-ai",
-    cardDescription: "An agent built in LangGraph that translates natural language into safe queries and returns results in clear, conversational style.",
+    title: "AI Interview Dashboard - COMING SOON",
+    slug: "ai-interview-dashboard",
+    cardDescription: "Transforms messy interview transcripts into clear, editable AI insights with real-time sentiment visualization.",
     project_description_1: '',
     project_description_2: '',
     image: "/images/projects-images/query.png",
@@ -11,7 +11,7 @@ export const projects = [
     video: "",
     screenshots: ["/images/screenshots/query-ai/query-ai-1.png", "/images/screenshots/query-ai/query-ai-2.png"],
     technologies: ["Next.js", "Cloudflare AI Agents", "Tailwind CSS", "Resend", "OpenAI API", "Supabase"],
-  }, 
+  },
   {
     title: "Email Service",
     slug: "email-service",
