@@ -48,7 +48,7 @@ export default function AboutPage() {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <motion.svg
+              {/* <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -59,18 +59,18 @@ export default function AboutPage() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2v2h14v-2H5z" />
-              </motion.svg>
-              Download&nbsp;Resume
+              </motion.svg> */}
+              {/* Download&nbsp;Resume */}
             </motion.a>
           </motion.div>
         </div>
         </AnimatedReveal>
 
           <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
-          {`I’m Karin, a full-stack Software Engineer with 8+ years of experience building fast, scalable, and user-focused web applications. My background spans both frontend and backend, with a focus on developer productivity, performance, and scalable infrastructure.`}
+          {`I’m Karin, a full-stack software engineer with 8 years of experience, but my strength is in building high-performance, user-focused frontends with React, Next.js, and TypeScript.`}
           </AnimatedParagraph>
           <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
-            {`Recently, I’ve been prototyping AI-powered and automation-driven tools, including multi-agent systems, natural-language database querying with guardrails, and serverless workflows. I’m especially excited about applying these technologies to make internal tools and digital products more transparent, reliable, and efficient.`}
+            {`Recently, I’ve been prototyping AI-powered dashboards and tools that transform messy, data-heavy outputs into clear, explainable UIs. I work closely with APIs and backend systems like Supabase, Cloudflare Workers, and serverless workflows. My core is frontend, but I know how to integrate with AI and backend infrastructure to deliver complete features.`}
           </AnimatedParagraph>
 
           {/* Tags */}
