@@ -48,7 +48,7 @@ export default function AboutPage() {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              {/* <motion.svg
+              <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -59,8 +59,8 @@ export default function AboutPage() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-7 2v2h14v-2H5z" />
-              </motion.svg> */}
-              {/* Download&nbsp;Resume */}
+              </motion.svg>
+              Download&nbsp;Resume
             </motion.a>
           </motion.div>
         </div>
