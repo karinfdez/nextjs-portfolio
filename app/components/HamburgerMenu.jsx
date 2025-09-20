@@ -9,17 +9,13 @@ const HamburgerMenu = () => {
   
   // Handle navigation with delay
   const handleNavigation = (e) => {
-    // Don't immediately close the menu
     e.preventDefault();
     const href = e.currentTarget.href;
-    
-    // Keep the menu open during transition
     setTimeout(() => {
       window.location.href = href;
-    }, 300); // Match the transition duration
+    }, 300); 
   };
   
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isOpen && !event.target.closest('.mobile-menu-container')) {
@@ -44,13 +40,9 @@ const HamburgerMenu = () => {
       document.body.style.right = '0';
       document.body.style.overflow = 'hidden';
       
-      // Store the scroll position as a data attribute
       document.body.setAttribute('data-scroll-position', scrollY.toString());
     } else {
-      // Get the stored scroll position
       const scrollY = parseInt(document.body.getAttribute('data-scroll-position') || '0');
-      
-      // Remove styles that prevent scrolling
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.left = '';

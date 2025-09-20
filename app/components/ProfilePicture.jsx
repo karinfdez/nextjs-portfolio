@@ -1,4 +1,3 @@
-// SvgBlob260x386.jsx
 "use client";
 import Image from "next/image";
 

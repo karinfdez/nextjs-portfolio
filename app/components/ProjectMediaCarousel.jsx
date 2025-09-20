@@ -46,6 +46,7 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
 
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  // useEmblaCarousel is a react hook from embla-carousel-react
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "center", slidesToScroll: 1 });
   
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
@@ -60,12 +61,8 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
   
   useEffect(() => {
     if (!emblaApi) return;
-    
-    // Subscribe to Embla's select event to update states
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
-    
-    // Initialize button states
     onSelect();
     
     return () => {

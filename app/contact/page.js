@@ -27,9 +27,6 @@ const handleCopy = () => {
         Drop me a message or connect with me below.
       </AnimatedSlideDown>
 
-    
-
-      {/* Replace this with your own animated SocialIcons component */}
       <AnimatedSlideUp delay={0.4} className="mb-10 w-full max-w-lg">
         <ContactForm />
       </AnimatedSlideUp>

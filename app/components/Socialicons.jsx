@@ -39,7 +39,6 @@ const SocialTab = ({ isMobile = false }) => {
   ];
 
 
-  // Always use horizontal layout regardless of device type
   const containerClass = "flex justify-center items-center";
   const iconsContainerClass = "flex space-x-4 p-3 rounded-lg bg-opacity-90"; // Horizontal spacing for all devices
 

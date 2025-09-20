@@ -87,36 +87,36 @@ const ProjectsCarousel = ({ projects = [] }) => {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
               >
               <Link
-  href={cardLink ?? "#"}
-  className="block w-full h-full group relative overflow-hidden rounded-lg"
-  scroll={false}
->
-      {image && (
-        <>
-          <Image
-            src={image}
-            alt={title}
-            width={800}
-            height={450}
-            className="object-cover w-full h-72 md:h-80 lg:h-96 transition-transform duration-700 ease-out group-hover:scale-105"
-            unoptimized
-          />
+                href={cardLink ?? "#"}
+                className="block w-full h-full group relative overflow-hidden rounded-lg"
+                scroll={false}
+              >
+                {image && (
+                  <>
+                    <Image
+                      src={image}
+                      alt={title}
+                      width={800}
+                      height={450}
+                      className="object-cover w-full h-72 md:h-80 lg:h-96 transition-transform duration-700 ease-out group-hover:scale-105"
+                      unoptimized
+                    />
 
-          {/* Top shadow fade */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-0"></div>
-        </>
-      )}
+                    {/* Top shadow fade */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-0"></div>
+                  </>
+                )}
 
-          {/* Sliding content (title + description) */}
-          <div
-            className="absolute bottom-0 left-0 w-full bg-white/70 dark:bg-[#0b1120]/80 backdrop-blur-sm text-gray-900 dark:text-gray-200
-              transition-all duration-500 transform md:group-hover:-translate-y-32 md:translate-y-0 
-              px-4 pt-3 pb-4 min-h-[125px] border-t border-white/20 dark:border-gray-700/40"
-          >
-            <h3 className="text-lg font-semibold">{title}</h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">{cardDescription}</p>
-          </div>
-        </Link>
+              {/* Sliding content (title + description) */}
+              <div
+                className="absolute bottom-0 left-0 w-full bg-white/70 dark:bg-[#0b1120]/80 backdrop-blur-sm text-gray-900 dark:text-gray-200
+                  transition-all duration-500 transform md:group-hover:-translate-y-32 md:translate-y-0 
+                  px-4 pt-3 pb-4 min-h-[125px] border-t border-white/20 dark:border-gray-700/40"
+              >
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">{cardDescription}</p>
+              </div>
+            </Link>
 
             </motion.div>
             ))}

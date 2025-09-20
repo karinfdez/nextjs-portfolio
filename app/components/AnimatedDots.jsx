@@ -18,7 +18,7 @@ const AnimatedDots = ({
   const GAP_PX = 16;       // space-y-4 = 1rem = 16px
   const longest = Math.max(...columns);
   const longestIndex = columns.indexOf(longest);
-  const lastDotRevealDelay = 0.3 + (longest - 1) * 0.1; // matches your per-dot delay
+  const lastDotRevealDelay = 0.3 + (longest - 1) * 0.1; //each dot is revealed 0.1s after the previous one
 
   // measure the longest column to compute remaining distance to bottom of viewport
   const longestColRef = useRef(null);
@@ -70,7 +70,7 @@ const AnimatedDots = ({
               />
             ))}
 
-            {/* Falling drop born from the last dot of the longest column */}
+            {/* the animation renders only if this is the longest column and the fall distance is known */}
             {isLongest && fallDistance !== null && (
                   <motion.div
                     className="absolute left-0 right-0 mx-auto"
@@ -90,7 +90,7 @@ const AnimatedDots = ({
                       repeatDelay: 15, // pause after all drops
                     }}
                   >
-                    <div className={`w-2 h-2 rounded-full ${colorClass}`} />
+                  <div className={`w-2 h-2 rounded-full ${colorClass}`} />     {/* The drop itself */}
                   </motion.div>
             )}
           </div>

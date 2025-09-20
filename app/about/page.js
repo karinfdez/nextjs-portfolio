@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import AnimatedParagraph from "../components/AnimatedParagraph";
 import AnimatedTag from "../components/AnimatedTag";
 import AnimatedReveal from "../components/AnimatedReveal";
@@ -24,6 +23,7 @@ export default function AboutPage() {
         </motion.div>
       
         </AnimatedReveal>
+       
         {/* Bio */}
         <div className="flex-1 space-y-4 text-center md:text-left items-center md:items-start">
         <AnimatedReveal delay={0.2}>
@@ -100,8 +100,6 @@ export default function AboutPage() {
 
       {/* long paragraph */}
       <div className="max-w-4xl mt-12 text-lg leading-relaxed text-gray-300 text-left space-y-6 pb-8 xl:pb-0">
-        {/* <AnimatedParagraph className="text-lg leading-relaxed text-gray-300">
-        </AnimatedParagraph> */}
         <AnimatedParagraph delay={0.2}>
         {`Beyond code, I’m passionate about reading, trading, and dancing. Always curious, always learning.`}
         </AnimatedParagraph>
