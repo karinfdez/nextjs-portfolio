@@ -26,6 +26,27 @@ export const projects = [
       technologies: ["Next.js", "React", "Typescript", "Tailwind CSS", "Radix UI", "Supabase", "PostgreSQL", "Cloudflare Workers"],
     },
     {
+      title: "Virtualized Infinite Scroll Table",
+      slug: "virtualized-table",
+      cardDescription: "A high-performance product table with infinite scroll and virtualization built using React, TypeScript, TanStack Table, Virtuoso, and Tailwind CSS.",
+      project_description_1: `This project demonstrates how to handle large datasets efficiently in a web application. It features a virtualized product table that renders thousands of rows smoothly using React Virtuoso, while TanStack Table manages column and cell logic. Data is fetched incrementally via API pagination with limit and skip parameters, ensuring efficient network usage and smooth infinite scrolling.`,
+      project_description_2: `The table includes key UX features such as loading spinners for initial and incremental fetches, a graceful "no more data" message when pagination ends, and a dynamic counter showing how many products are currently loaded out of the total available. This project highlights performance optimization, state management, and modern UI styling with Tailwind CSS.`,
+      image: "/images/projects-images/virtualized-table.png",
+      cardLink: "/projects/virtualized-table",
+      githubLink: "https://github.com/karinfdez/virtualized-table", // replace with your actual repo link
+      screenshots: [
+        "/images/screenshots/virtualized-table/virtualized-table-1.png",
+        "/images/screenshots/virtualized-table/virtualized-table-2.png",
+      ],
+      technologies: [
+        "React",
+        "TypeScript",
+        "TanStack Table",
+        "React Virtuoso",
+        "Tailwind CSS"
+      ],
+    },
+    {
       title: "Next.js Portfolio",
       slug: "nextjs-portfolio",
       cardDescription: "A modern, responsive portfolio website built with Next.js, Tailwind CSS, and Framer Motion animations.",

@@ -89,11 +89,6 @@ const HamburgerMenu = () => {
         <div className="flex flex-col items-center justify-center h-full py-16">
           <ul className="flex flex-col items-center space-y-12 text-3xl font-medium">
             <li>
-              <Link href="/" className="text-white hover:text-orange-500 transition-colors duration-300" onClick={handleNavigation}>
-                Home
-              </Link>
-            </li>
-            <li>
               <Link href="/about" className="text-white hover:text-orange-500 transition-colors duration-300" onClick={handleNavigation}>
                 About
               </Link>
