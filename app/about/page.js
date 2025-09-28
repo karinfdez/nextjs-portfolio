@@ -81,8 +81,7 @@ export default function AboutPage() {
               "Tailwind CSS",
               "OpenAI API",
               "Cloudflare AI Agents",
-              "Supabase",
-              "Langraph"
+              "Supabase"
             ].map((tag, idx) => (
               <AnimatedTag
                 key={tag}
