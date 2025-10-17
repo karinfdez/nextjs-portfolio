@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row md:items-center gap-2">
           <div className="flex flex-col">
             <h1 className="text-3xl md:text-4xl font-bold">Karin Fernandez</h1>
-            <p className="text-gray-400">Miami, FL</p>
+            <p className="text-gray-400">San Francisco, CA</p>
           </div>
           </div>
           <div className="flex flex-col">
