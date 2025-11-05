@@ -67,7 +67,7 @@ export default function AboutPage() {
         </AnimatedReveal>
 
           <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
-          {`I’m Karin, a full-stack software engineer with 8 years of experience, but my strength is in building high-performance, user-focused frontends with React, Next.js, and TypeScript.`}
+          {`I’m Karin, a Frontend Software Engineer with 8 years of experience, but my strength is in building high-performance, user-focused frontends with React, Next.js, and TypeScript.`}
           </AnimatedParagraph>
           <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
             {`Recently, I’ve been prototyping AI-powered dashboards and tools that transform messy, data-heavy outputs into clear, explainable UIs. I work closely with APIs and backend systems like Supabase, Cloudflare Workers, and serverless workflows. My core is frontend, but I know how to integrate with AI and backend infrastructure to deliver complete features.`}
