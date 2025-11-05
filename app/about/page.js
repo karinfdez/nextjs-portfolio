@@ -4,6 +4,7 @@ import AnimatedParagraph from "../components/AnimatedParagraph";
 import AnimatedTag from "../components/AnimatedTag";
 import AnimatedReveal from "../components/AnimatedReveal";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import ProfilePicture from "../components/ProfilePicture";
 
 export default function AboutPage() {
@@ -11,7 +12,28 @@ export default function AboutPage() {
     <main className="flex flex-col items-center justify-center lg:justify-start h-screen px-4 pt-0 lg:pt-32">
       <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Avatar */}
-        <AnimatedReveal delay={0.1} className="block">
+        {/* Mobile: use a plain image to avoid iOS foreignObject clipping issues */}
+        <AnimatedReveal delay={0.1} className="md:hidden flex w-full justify-center">
+          <motion.div
+            whileHover={{
+              scale: 1.02,
+            }}
+            transition={{ type: "spring", stiffness: 200, damping: 10 }}
+            className="overflow-hidden rounded-xl border-2 border-orange-500"
+          >
+            <Image
+              src="/images/flip-images/karin-full.png"
+              alt="Profile photo"
+              width={240}
+              height={240}
+              className="object-cover w-[240px] h-[240px]"
+              priority
+            />
+          </motion.div>
+        </AnimatedReveal>
+
+        {/* Desktop: keep SVG blob version and size */}
+        <AnimatedReveal delay={0.1} className="hidden md:block">
         <motion.div
           whileHover={{
             scale: 1.02,
