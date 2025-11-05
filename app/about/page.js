@@ -8,10 +8,10 @@ import ProfilePicture from "../components/ProfilePicture";
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center justify-center lg:justify-start h-screen px-4 pt-40 md:pt-0 lg:pt-32">
+    <main className="flex flex-col items-center justify-center lg:justify-start h-screen px-4 pt-0 lg:pt-32">
       <div className="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start gap-10">
         {/* Avatar */}
-        <AnimatedReveal delay={0.1} className="hidden md:block">
+        <AnimatedReveal delay={0.1} className="block">
         <motion.div
           whileHover={{
             scale: 1.02,
@@ -66,15 +66,15 @@ export default function AboutPage() {
         </div>
         </AnimatedReveal>
 
-          <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
-          {`I’m Karin, a Frontend Software Engineer with 8 years of experience, but my strength is in building high-performance, user-focused frontends with React, Next.js, and TypeScript.`}
+          <AnimatedParagraph className="text-md md:text-lg leading-relaxed text-gray-300 text-left">
+          {`I’m Karin, a Frontend Software Engineer with 8 years of experience building high-performance, user-focused products using React, Next.js, and TypeScript.`}
           </AnimatedParagraph>
-          <AnimatedParagraph className="text-lg leading-relaxed text-gray-300 text-left">
-            {`Recently, I’ve been prototyping AI-powered dashboards and tools that transform messy, data-heavy outputs into clear, explainable UIs. I work closely with APIs and backend systems like Supabase, Cloudflare Workers, and serverless workflows. My core is frontend, but I know how to integrate with AI and backend infrastructure to deliver complete features.`}
+          <AnimatedParagraph className="text-md md:text-lg leading-relaxed text-gray-300 text-left hidden md:block">
+            {`Lately, I’ve been prototyping AI-powered dashboards and tools that transform messy, data-heavy outputs into clear, explainable UIs. I work closely with APIs and backend systems like Supabase, Cloudflare Workers, and serverless workflows. My core is frontend, but I know how to integrate with AI and backend infrastructure to deliver complete features.`}
           </AnimatedParagraph>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-3 pt-2 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-3 pt-2 justify-center md:justify-start hidden md:block">
             {[
               "Next.js",
               "React",
@@ -98,7 +98,7 @@ export default function AboutPage() {
       </div>
 
       {/* long paragraph */}
-      <div className="max-w-4xl mt-12 text-lg leading-relaxed text-gray-300 text-left space-y-6 pb-8 xl:pb-0">
+      <div className="max-w-4xl mt-12 text-md md:text-lg leading-relaxed text-gray-300 text-left space-y-6 pb-8 xl:pb-0">
         <AnimatedParagraph delay={0.2}>
         {`Beyond code, I’m passionate about reading, trading, and dancing. Always curious, always learning.`}
         </AnimatedParagraph>
