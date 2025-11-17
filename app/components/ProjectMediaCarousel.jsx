@@ -76,8 +76,15 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
   const getYoutubeEmbed = (url) => {
     if (!url) return "";
     if (url.includes("embed")) return url;
+    
+    // Handle youtu.be format
+    const youtuBeMatch = url.match(/youtu\.be\/([^?&]+)/);
+    if (youtuBeMatch) return `https://www.youtube.com/embed/${youtuBeMatch[1]}`;
+    
+    // Handle youtube.com format
     const videoIdMatch = url.match(/[?&]v=([^&]+)/);
     if (videoIdMatch) return `https://www.youtube.com/embed/${videoIdMatch[1]}`;
+    
     return url;
   };
 
