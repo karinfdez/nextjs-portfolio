@@ -46,6 +46,7 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
 
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  const [loadedImages, setLoadedImages] = useState(new Set());
   // useEmblaCarousel is a react hook from embla-carousel-react
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "center", slidesToScroll: 1 });
   
@@ -98,13 +99,28 @@ export default function ProjectMediaCarousel({ video = "", screenshots = [] }) {
                   allowFullScreen
                 />
               ) : (
-                <Image
-                  src={item.src}
-                  alt={`Screenshot ${idx + 1}`}
-                  width={1280}
-                  height={720}
-                  className="object-contain w-full h-full"
-                />
+                <div className="relative w-full h-full">
+                  {!loadedImages.has(idx) && (
+                    <div className="absolute inset-0 bg-gray-800 animate-pulse flex items-center justify-center">
+                      <div className="text-gray-400">Loading...</div>
+                    </div>
+                  )}
+                  <Image
+                    src={item.src}
+                    alt={`Screenshot ${idx + 1}`}
+                    width={1280}
+                    height={720}
+                    className={`object-contain w-full h-full transition-opacity duration-300 ${
+                      loadedImages.has(idx) ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    priority={idx === 0} // Prioritize first image
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+Rj5m9T+JN0k9Qc=="
+                    onLoad={() => {
+                      setLoadedImages(prev => new Set([...prev, idx]));
+                    }}
+                  />
+                </div>
               )}
             </div>
           ))}
