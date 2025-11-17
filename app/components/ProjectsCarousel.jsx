@@ -99,7 +99,7 @@ const ProjectsCarousel = ({ projects = [] }) => {
                       width={800}
                       height={450}
                       className="object-cover w-full h-72 md:h-80 lg:h-96 transition-transform duration-700 ease-out group-hover:scale-105"
-                      unoptimized
+                      priority={idx === 0}
                     />
 
                     {/* Top shadow fade */}
