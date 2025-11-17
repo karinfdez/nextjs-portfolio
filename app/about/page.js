@@ -96,7 +96,7 @@ export default function AboutPage() {
           </AnimatedParagraph>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-3 pt-2 justify-center md:justify-start hidden md:block">
+          {/* <div className="flex flex-wrap gap-3 pt-2 justify-center md:justify-start hidden md:block">
             {[
               "Next.js",
               "React",
@@ -113,9 +113,7 @@ export default function AboutPage() {
                 {tag}
               </AnimatedTag>
             ))}
-          </div>
-
-         
+          </div> */}
         </div>
       </div>
 
