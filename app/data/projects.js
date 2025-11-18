@@ -21,7 +21,7 @@ export const projects = [
     image: "/images/projects-images/email-service.png",
     cardLink: "/projects/email-service",
     githubLink: "https://github.com/karinfdez/email-service-showcase/blob/main/README.md",
-    video: "https://www.youtube.com/watch?v=062hPy_t3XI",
+    video: "https://youtu.be/FC-rW_cXpAA",
     screenshots: ["/images/screenshots/email-service/email-service-1.png", "/images/screenshots/email-service/email-service-2.png"],
     technologies: ["Next.js", "Cloudflare AI Agents", "Tailwind CSS", "Resend", "OpenAI API", "Supabase"],
   },
